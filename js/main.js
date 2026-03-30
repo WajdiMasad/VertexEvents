@@ -1,66 +1,86 @@
 /* ============================================================
-   Vertex Events — main.js  (shared across all pages)
+   Vertex Events — main.js (shared)
    ============================================================ */
 
-// ── Navbar scroll effect ──────────────────────────────────────
-const navbar = document.querySelector('.navbar');
-if (navbar) {
-  window.addEventListener('scroll', () => {
+// ── THEME TOGGLE (light = default) ──
+(function () {
+  const html    = document.documentElement;
+  const DARK    = 'dark';
+  const KEY     = 'vx-theme';
+
+  // Apply saved preference (default = light, so only set if user chose dark)
+  const saved = localStorage.getItem(KEY);
+  if (saved === DARK) html.setAttribute('data-theme', DARK);
+
+  function setToggleState(isDark) {
+    document.querySelectorAll('.theme-toggle-icon').forEach((el, i) => {
+      if (i === 0) el.textContent = isDark ? '🌙' : '☀️';
+    });
+  }
+
+  function toggleTheme() {
+    const isDark = html.getAttribute('data-theme') === DARK;
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      localStorage.setItem(KEY, 'light');
+      setToggleState(false);
+    } else {
+      html.setAttribute('data-theme', DARK);
+      localStorage.setItem(KEY, DARK);
+      setToggleState(true);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const isDark = html.getAttribute('data-theme') === DARK;
+    setToggleState(isDark);
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', toggleTheme);
+    });
+  });
+})();
+
+// ── NAVBAR scroll ──
+(function () {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+  const onScroll = () => {
     navbar.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
-}
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 
-// ── Active nav link ───────────────────────────────────────────
-const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
-navLinks.forEach(link => {
-  if (link.href === window.location.href) link.classList.add('active');
-});
+// ── MOBILE MENU ──
+(function () {
+  const hamburger  = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn   = document.getElementById('mobile-close');
+  if (!hamburger || !mobileMenu) return;
 
-// ── Mobile menu ───────────────────────────────────────────────
-const hamburger   = document.getElementById('hamburger');
-const mobileMenu  = document.getElementById('mobile-menu');
-const mobileClose = document.getElementById('mobile-close');
+  const open  = () => { mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const close = () => { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; };
 
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-  mobileClose?.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  });
-}
+  hamburger.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+})();
 
-// ── Scroll reveal ─────────────────────────────────────────────
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+// ── SCROLL REVEAL ──
+(function () {
+  const els = document.querySelectorAll('.fade-up');
+  if (!els.length) return;
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  els.forEach(el => observer.observe(el));
+})();
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// ── Animated counter ─────────────────────────────────────────
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target, 10);
-  const duration = 1800;
-  const step = target / (duration / 16);
-  let current = 0;
-  const timer = setInterval(() => {
-    current += step;
-    if (current >= target) { current = target; clearInterval(timer); }
-    el.textContent = Math.floor(current).toLocaleString() + (el.dataset.suffix || '');
-  }, 16);
-}
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      counterObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+// ── HERO IMAGE Ken Burns ──
+(function () {
+  const img = document.querySelector('.hero-img');
+  if (!img) return;
+  img.addEventListener('load', () => img.classList.add('loaded'));
+  if (img.complete) img.classList.add('loaded');
+})();
