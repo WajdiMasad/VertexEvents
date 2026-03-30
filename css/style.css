@@ -45,14 +45,14 @@
 /* ── DARK THEME ── */
 [data-theme="dark"] {
   --bg-1:      #070707;
-  --bg-2:      #0e0e0e;
+  --bg-2:      #0E0E0E;
   --bg-3:      #161616;
-  --bg-4:      #1e1e1e;
+  --bg-4:      #1E1E1E;
   --bg-5:      #272727;
 
   --text-1:    #F4F0E8;
-  --text-2:    #8A8680;
-  --text-3:    #555250;
+  --text-2:    #B5B0A6;
+  --text-3:    #827E77;
 
   --blue-3:    #4A7AEE;
   --blue-dim:  rgba(35,87,217,0.12);
