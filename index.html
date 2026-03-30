@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertex Events — Premium Event Rentals & Services</title>
+  <meta name="description" content="Vertex Events provides premium event rentals and services — inflatables, décor, tents, entertainment, photo booths, and more. Build your wishlist and get a quote today." />
+
+  <!-- Goodshuffle Pro Integration -->
+  <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5/dist/gspro-wc/gspro-wc.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@goodshuffle/gspro-wc@0.5/dist/gspro-wc/gspro-wc.js"></script>
+  <gspro-wishlist-config data-url="https://data.goodshuffle.com/vendor/mITUNPfQxxm1IZwNCK9wB6Mz4dUcVE"></gspro-wishlist-config>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚡</div>
+        Vertex<span class="accent">Events</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="inventory.html">Browse Rentals</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <gspro-wishlist-button></gspro-wishlist-button>
+        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <a href="index.html">Home</a>
+    <a href="inventory.html">Browse Rentals</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:16px;">Get a Quote</a>
+  </div>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="hero">
+    <!-- Background orbs -->
+    <div class="glow-orb hero-orb-1"></div>
+    <div class="glow-orb hero-orb-2"></div>
+    <div class="glow-orb hero-orb-3"></div>
+
+    <!-- Particle dots -->
+    <div class="hero-particles" id="particles"></div>
+
+    <div class="container hero-content">
+      <div class="hero-pill reveal">
+        <span class="pulse-dot"></span>
+        Halifax's Premier Event Rental Company
+      </div>
+      <h1 class="reveal reveal-delay-1">
+        Elevate <span class="gradient-text">Every Event</span><br />
+        Beyond Expectations
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        From breathtaking décor and inflatables to carnival games, live entertainment, and full-service event production — we bring your vision to life.
+      </p>
+      <div class="hero-btns reveal reveal-delay-3">
+        <a href="inventory.html" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Browse Rentals
+        </a>
+        <a href="contact.html" class="btn btn-outline btn-lg">
+          Get a Free Quote
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="hero-stats reveal reveal-delay-4">
+        <div class="stat-item">
+          <span class="stat-num" data-target="670" data-suffix="+">0+</span>
+          <span class="stat-label">Rental Items</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="20" data-suffix="+">0+</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="100" data-suffix="%">0%</span>
+          <span class="stat-label">Event Ready</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="5" data-suffix="★">0★</span>
+          <span class="stat-label">Rated Service</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ── Categories Grid ── -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="pill">Browse By Category</div>
+        <h2>Everything You Need,<br /><span class="gradient-text">All in One Place</span></h2>
+        <p>Explore our massive inventory of 670+ rental items across 20+ categories — all available to add to your wishlist.</p>
+      </div>
+
+      <div class="categories-grid">
+        <!-- Inflatables -->
+        <a href="inventory.html?category=inflatables-rentals" class="cat-card reveal">
+          <div class="cat-icon">🎪</div>
+          <div class="cat-info">
+            <h3>Inflatables</h3>
+            <p>Bounce houses, slides, obstacle courses, water slides & more</p>
+            <span class="cat-count badge">206 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Entertainment & Games -->
+        <a href="inventory.html?category=entertainment-games-rentals" class="cat-card reveal reveal-delay-1">
+          <div class="cat-icon">🎮</div>
+          <div class="cat-info">
+            <h3>Entertainment & Games</h3>
+            <p>Carnival games, casino, arcade, VR, mini golf & more</p>
+            <span class="cat-count badge">95 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Entertainment Services -->
+        <a href="inventory.html?category=entertainment-services" class="cat-card reveal reveal-delay-2">
+          <div class="cat-icon">🎭</div>
+          <div class="cat-info">
+            <h3>Entertainment Services</h3>
+            <p>MCs, clowns, balloon artists, casino dealers & more</p>
+            <span class="cat-count badge">100 services</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Décor -->
+        <a href="inventory.html?category=decor-rentals" class="cat-card reveal reveal-delay-3">
+          <div class="cat-icon">✨</div>
+          <div class="cat-info">
+            <h3>Décor</h3>
+            <p>Backdrops, arches, balloons, air dancers, props & more</p>
+            <span class="cat-count badge">79 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Food & Beverage -->
+        <a href="inventory.html?category=food-service-rentals" class="cat-card reveal">
+          <div class="cat-icon">🍿</div>
+          <div class="cat-info">
+            <h3>Food & Beverage</h3>
+            <p>Popcorn machines, cotton candy, slushies, concession supplies</p>
+            <span class="cat-count badge">60 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Tents -->
+        <a href="inventory.html?category=tent-canopy-rentals" class="cat-card reveal reveal-delay-1">
+          <div class="cat-icon">⛺</div>
+          <div class="cat-info">
+            <h3>Tents & Canopies</h3>
+            <p>10×10 up to 40×20 tent options, sidewalls, poles & more</p>
+            <span class="cat-count badge">51 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Furniture -->
+        <a href="inventory.html?category=furniture-rentals" class="cat-card reveal reveal-delay-2">
+          <div class="cat-icon">🛋️</div>
+          <div class="cat-info">
+            <h3>Furniture</h3>
+            <p>Thrones, sectionals, bars, tables, chairs & lounge pieces</p>
+            <span class="cat-count badge">31 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Photo Booths -->
+        <a href="inventory.html?category=photo-booth-rentals" class="cat-card reveal reveal-delay-3">
+          <div class="cat-icon">📸</div>
+          <div class="cat-info">
+            <h3>Photo Booths</h3>
+            <p>360° booths, open-air setups and enclosed options</p>
+            <span class="cat-count badge">7 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Pro Audio -->
+        <a href="inventory.html?category=pro-audio-rentals" class="cat-card reveal">
+          <div class="cat-icon">🔊</div>
+          <div class="cat-info">
+            <h3>Pro Audio</h3>
+            <p>Speakers, microphones, mixers for any venue size</p>
+            <span class="cat-count badge">9 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Lighting -->
+        <a href="inventory.html?category=lighting-decor-rentals" class="cat-card reveal reveal-delay-1">
+          <div class="cat-icon">💡</div>
+          <div class="cat-info">
+            <h3>Lighting</h3>
+            <p>Marquee signs, string lights, moving heads, LED effects</p>
+            <span class="cat-count badge">23 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- Visual Effects -->
+        <a href="inventory.html?category=visual-effect-rentals" class="cat-card reveal reveal-delay-2">
+          <div class="cat-icon">🎆</div>
+          <div class="cat-info">
+            <h3>Visual Effects</h3>
+            <p>CO₂ jets, fog machines, fireworks, bubble effects</p>
+            <span class="cat-count badge">10 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </a>
+
+        <!-- View All -->
+        <a href="inventory.html" class="cat-card cat-card--all reveal reveal-delay-3">
+          <div class="cat-icon">🗂️</div>
+          <div class="cat-info">
+            <h3>View All Rentals</h3>
+            <p>Browse the full catalog with 670+ items across every category</p>
+          </div>
+          <div class="cat-arrow cat-arrow--big">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why Vertex ── -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="pill">Why Choose Us</div>
+        <h2>The Vertex <span class="gradient-text">Difference</span></h2>
+        <p>More than rentals — we're your end-to-end event partner.</p>
+      </div>
+      <div class="grid-3 why-grid">
+        <div class="why-card card reveal">
+          <div class="why-icon">🚚</div>
+          <h3>Delivery & Setup</h3>
+          <p>We handle logistics from our warehouse to your venue. Stress-free delivery and professional setup included.</p>
+        </div>
+        <div class="why-card card reveal reveal-delay-1">
+          <div class="why-icon">🎯</div>
+          <h3>One-Stop Shop</h3>
+          <p>670+ rental items + entertainment services in one place. Browse, wishlist, and book everything seamlessly.</p>
+        </div>
+        <div class="why-card card reveal reveal-delay-2">
+          <div class="why-icon">⭐</div>
+          <h3>Premium Quality</h3>
+          <p>Every item is inspected, cleaned, and event-ready. Our team ensures flawless execution every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ── -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card reveal">
+        <div class="cta-glow"></div>
+        <div class="cta-content">
+          <h2>Ready to Plan Your <span class="gradient-text">Perfect Event?</span></h2>
+          <p>Browse our full inventory, add items to your wishlist, and our team will craft a personalized quote just for you.</p>
+          <div class="cta-btns">
+            <a href="inventory.html" class="btn btn-primary btn-lg">Browse Inventory</a>
+            <a href="contact.html" class="btn btn-ghost btn-lg">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">⚡</div>
+            Vertex<span class="accent">Events</span>
+          </a>
+          <p>Halifax's premier event rental company. From inflatables to full event production, we've got you covered.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="inventory.html">Browse Rentals</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Top Categories</h4>
+          <a href="inventory.html?category=inflatables-rentals">Inflatables</a>
+          <a href="inventory.html?category=entertainment-games-rentals">Games</a>
+          <a href="inventory.html?category=decor-rentals">Décor</a>
+          <a href="inventory.html?category=tent-canopy-rentals">Tents</a>
+          <a href="inventory.html?category=food-service-rentals">Food & Beverage</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+19025551234">📞 (902) 555-1234</a>
+          <a href="mailto:hello@vertexevents.ca">✉️ hello@vertexevents.ca</a>
+          <a href="#">📍 Halifax, Nova Scotia</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Vertex Events. All rights reserved.</span>
+        <span>Powered by <a href="https://pro.goodshuffle.com" style="color:var(--blue-400);">Goodshuffle Pro</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

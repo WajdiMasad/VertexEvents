@@ -1,0 +1,77 @@
+/* ============================================================
+   Vertex Events — inventory.css
+   ============================================================ */
+
+.inventory-hero {
+  padding-top: calc(var(--nav-height) + 72px);
+  padding-bottom: 60px;
+}
+
+/* ── Filter Bar ── */
+.filter-bar {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 100;
+  background: rgba(10, 15, 30, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.filter-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 2px;
+}
+.filter-scroll::-webkit-scrollbar { display: none; }
+
+.filter-btn {
+  flex-shrink: 0;
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--t-fast);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: rgba(37,99,235,0.08);
+}
+
+.filter-btn.active {
+  background: var(--grad-primary);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 2px 12px rgba(37,99,235,0.35);
+}
+
+/* ── Inventory Main ── */
+.inventory-main {
+  padding: 48px 0 80px;
+  min-height: 60vh;
+}
+
+.inventory-wrapper {
+  margin-bottom: 48px;
+}
+
+/* ── Wishlish CTA ── */
+.wishlist-cta-card {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 36px;
+}
+.wishlist-cta-card h3 { margin-bottom: 10px; font-size: 1.25rem; }
+.wishlist-cta-card p  { margin-bottom: 24px; }

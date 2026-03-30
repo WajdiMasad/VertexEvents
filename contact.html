@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Vertex Events</title>
+  <meta name="description" content="Get in touch with Vertex Events for a custom event rental quote in Halifax, Nova Scotia. We respond within 24 hours." />
+
+  <!-- Goodshuffle Pro Integration -->
+  <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5/dist/gspro-wc/gspro-wc.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@goodshuffle/gspro-wc@0.5/dist/gspro-wc/gspro-wc.js"></script>
+  <gspro-wishlist-config data-url="https://data.goodshuffle.com/vendor/mITUNPfQxxm1IZwNCK9wB6Mz4dUcVE"></gspro-wishlist-config>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚡</div>
+        Vertex<span class="accent">Events</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html">Browse Rentals</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <gspro-wishlist-button></gspro-wishlist-button>
+        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <a href="index.html">Home</a>
+    <a href="inventory.html">Browse Rentals</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:16px;">Get a Quote</a>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero contact-hero">
+    <div class="glow-orb" style="width:500px;height:500px;background:rgba(37,99,235,0.2);top:-100px;left:50%;transform:translateX(-50%);"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="pill" style="margin-bottom:16px;">Quick Response Guaranteed</div>
+      <h1>Let's Plan Your <span class="gradient-text">Perfect Event</span></h1>
+      <p style="max-width:540px;margin:16px auto 0;font-size:1.05rem;">Tell us about your event and we'll get back to you within 24 hours with a personalised quote.</p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <main class="contact-main">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Form -->
+        <div class="contact-form-wrap reveal">
+          <div class="card contact-form-card">
+            <h3>Request a Quote</h3>
+            <p style="margin-bottom:28px;">Fill out the form and we'll reach out with pricing and availability.</p>
+
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" name="first_name" placeholder="Jane" required />
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" name="last_name" placeholder="Doe" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(902) 555-0000" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="event-date">Event Date *</label>
+                  <input type="date" id="event-date" name="event_date" required />
+                </div>
+                <div class="form-group">
+                  <label for="guests">Estimated Guests</label>
+                  <select id="guests" name="guests">
+                    <option value="">Select range</option>
+                    <option>Under 50</option>
+                    <option>50 – 150</option>
+                    <option>150 – 300</option>
+                    <option>300 – 500</option>
+                    <option>500+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="event-type">Event Type *</label>
+                <select id="event-type" name="event_type" required>
+                  <option value="">Select event type</option>
+                  <option>Birthday Party</option>
+                  <option>Corporate Event</option>
+                  <option>Wedding</option>
+                  <option>School / University Event</option>
+                  <option>Festival / Fair</option>
+                  <option>Community Event</option>
+                  <option>Private Party</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="location">Event Location / Venue</label>
+                <input type="text" id="location" name="location" placeholder="Venue name or address in Halifax, NS" />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Tell Us About Your Event *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Describe your event, the items or services you're interested in, and any special requirements..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;" id="submit-btn">
+                Send Request
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+              </button>
+
+              <div class="form-success" id="form-success">
+                <span>✅</span>
+                <div>
+                  <strong>Message received!</strong>
+                  <p>We'll get back to you within 24 hours.</p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info reveal reveal-delay-2">
+          <div class="info-group">
+            <h3>Get in Touch</h3>
+            <div class="info-cards">
+              <div class="info-card">
+                <div class="info-icon">📞</div>
+                <div>
+                  <h4>Phone</h4>
+                  <a href="tel:+19025551234">(902) 555-1234</a>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">✉️</div>
+                <div>
+                  <h4>Email</h4>
+                  <a href="mailto:hello@vertexevents.ca">hello@vertexevents.ca</a>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">📍</div>
+                <div>
+                  <h4>Location</h4>
+                  <span>Halifax, Nova Scotia, Canada</span>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">🕐</div>
+                <div>
+                  <h4>Hours</h4>
+                  <span>Mon–Fri: 9am – 6pm<br />Sat: 10am – 4pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-tip">
+            <div class="tip-icon">💡</div>
+            <div>
+              <strong>Pro Tip:</strong>
+              <p>Browse our <a href="inventory.html" style="color:var(--blue-400);">inventory page</a> and add items to your wishlist before contacting us — it helps us prepare your quote faster!</p>
+            </div>
+          </div>
+
+          <!-- Wishlist shortcut -->
+          <div class="wishlist-shortcut">
+            <h4>🛍️ Your Wishlist</h4>
+            <p>Already added items to your wishlist? View and share it directly:</p>
+            <gspro-wishlist></gspro-wishlist>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">⚡</div>
+            Vertex<span class="accent">Events</span>
+          </a>
+          <p>Halifax's premier event rental company. From inflatables to full event production, we've got you covered.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="inventory.html">Browse Rentals</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Top Categories</h4>
+          <a href="inventory.html?category=inflatables-rentals">Inflatables</a>
+          <a href="inventory.html?category=entertainment-games-rentals">Games</a>
+          <a href="inventory.html?category=decor-rentals">Décor</a>
+          <a href="inventory.html?category=tent-canopy-rentals">Tents</a>
+          <a href="inventory.html?category=food-service-rentals">Food & Beverage</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+19025551234">📞 (902) 555-1234</a>
+          <a href="mailto:hello@vertexevents.ca">✉️ hello@vertexevents.ca</a>
+          <a href="#">📍 Halifax, Nova Scotia</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Vertex Events. All rights reserved.</span>
+        <span>Powered by <a href="https://pro.goodshuffle.com" style="color:var(--blue-400);">Goodshuffle Pro</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
