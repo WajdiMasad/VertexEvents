@@ -6,9 +6,8 @@
   <title>Browse Rentals — Vertex Events</title>
   <meta name="description" content="Browse Vertex Events' full catalog of 670+ rental items. Add to your wishlist and request a quote." />
 
-  <!-- Goodshuffle Pro Integration -->
-  <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5/dist/gspro-wc/gspro-wc.esm.js"></script>
-  <script nomodule src="https://unpkg.com/@goodshuffle/gspro-wc@0.5/dist/gspro-wc/gspro-wc.js"></script>
+  <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.js"></script>
   <gspro-wishlist-config data-url="https://data.goodshuffle.com/vendor/Onv97vozQ68q0Iimwx7LZRZBMHp6ah"></gspro-wishlist-config>
 
   <link rel="stylesheet" href="css/style.css" />
@@ -16,107 +15,94 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="logo-icon">⚡</div>
-        Vertex<span class="accent">Events</span>
-      </a>
+      <a href="index.html" class="nav-wordmark">Vertex<span>Events</span></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="inventory.html" class="active">Browse Rentals</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-cta">
+      <div class="nav-right">
         <gspro-wishlist-button></gspro-wishlist-button>
         <a href="contact.html" class="btn btn-primary">Get a Quote</a>
       </div>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-close" id="mobile-close">✕</button>
     <a href="index.html">Home</a>
     <a href="inventory.html">Browse Rentals</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html" class="btn btn-primary" style="margin-top:16px;">Get a Quote</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Get a Quote</a>
   </div>
 
   <!-- Page Hero -->
-  <div class="page-hero inventory-hero">
-    <div class="glow-orb" style="width:500px;height:500px;background:rgba(37,99,235,0.2);top:-100px;left:50%;transform:translateX(-50%);"></div>
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="pill" style="margin-bottom:16px;">670+ Items Available</div>
-      <h1>Browse <span class="gradient-text">Our Inventory</span></h1>
-      <p style="max-width:560px;margin:16px auto 0;font-size:1.05rem;">Add any item to your wishlist — our team will reach out with availability and pricing.</p>
+  <div class="page-hero">
+    <div class="container">
+      <p class="page-hero-label">670+ Items Available</p>
+      <h1>Browse Our<br /><em style="font-style:italic;color:var(--blue-3);">Full Inventory</em></h1>
+      <p>Add any item to your wishlist — we'll reach out with availability and a custom quote.</p>
     </div>
   </div>
 
-  <!-- Category Filter Bar -->
+  <!-- Filter Bar -->
   <div class="filter-bar">
     <div class="container">
       <div class="filter-scroll">
         <button class="filter-btn active" data-cat="">All Items</button>
-        <button class="filter-btn" data-cat="inflatables-rentals">🎪 Inflatables</button>
-        <button class="filter-btn" data-cat="entertainment-games-rentals">🎮 Games</button>
-        <button class="filter-btn" data-cat="entertainment-services">🎭 Entertainment</button>
-        <button class="filter-btn" data-cat="decor-rentals">✨ Décor</button>
-        <button class="filter-btn" data-cat="food-service-rentals">🍿 Food & Bev</button>
-        <button class="filter-btn" data-cat="tent-canopy-rentals">⛺ Tents</button>
-        <button class="filter-btn" data-cat="furniture-rentals">🛋️ Furniture</button>
-        <button class="filter-btn" data-cat="photo-booth-rentals">📸 Photo Booths</button>
-        <button class="filter-btn" data-cat="lighting-decor-rentals">💡 Lighting</button>
-        <button class="filter-btn" data-cat="pro-audio-rentals">🔊 Audio</button>
-        <button class="filter-btn" data-cat="visual-effect-rentals">🎆 Effects</button>
+        <button class="filter-btn" data-cat="inflatables-rentals">Inflatables</button>
+        <button class="filter-btn" data-cat="entertainment-games-rentals">Games</button>
+        <button class="filter-btn" data-cat="entertainment-services">Entertainment</button>
+        <button class="filter-btn" data-cat="decor-rentals">Décor</button>
+        <button class="filter-btn" data-cat="food-service-rentals">Food & Bev</button>
+        <button class="filter-btn" data-cat="tent-canopy-rentals">Tents</button>
+        <button class="filter-btn" data-cat="furniture-rentals">Furniture</button>
+        <button class="filter-btn" data-cat="photo-booth-rentals">Photo Booths</button>
+        <button class="filter-btn" data-cat="lighting-decor-rentals">Lighting</button>
+        <button class="filter-btn" data-cat="pro-audio-rentals">Audio</button>
+        <button class="filter-btn" data-cat="visual-effect-rentals">Effects</button>
       </div>
     </div>
   </div>
 
-  <!-- Inventory Content -->
-  <main class="inventory-main">
+  <!-- Inventory -->
+  <main class="inv-main">
     <div class="container">
-      <div class="inventory-wrapper">
-        <gspro-item-list id="gs-items"></gspro-item-list>
-      </div>
+      <gspro-item-gallery></gspro-item-gallery>
+      <gspro-item-list id="gs-items"></gspro-item-list>
 
-      <!-- Wishlist CTA -->
-      <div class="wishlist-cta">
-        <div class="card wishlist-cta-card">
-          <h3>🛍️ Ready to Request Your Items?</h3>
-          <p>Once you've added items to your wishlist, click the wishlist icon in the navigation and submit your event details to receive a custom quote.</p>
-          <a href="contact.html" class="btn btn-primary">Contact Us Directly</a>
-        </div>
+      <div class="inv-cta">
+        <p class="section-label">Ready to book?</p>
+        <h3 class="section-title" style="font-size:1.5rem;">Added items to your wishlist?</h3>
+        <p style="color:var(--text-2);margin:12px 0 24px;max-width:460px;">Click the wishlist button in the navigation to view and share your list, or contact us directly for a quote.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-main">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            <div class="logo-icon">⚡</div>
-            Vertex<span class="accent">Events</span>
-          </a>
-          <p>Halifax's premier event rental company. From inflatables to full event production, we've got you covered.</p>
+          <a href="index.html" class="nav-wordmark">Vertex<span>Events</span></a>
+          <p>Halifax's premier event rental company. From inflatables to full event production.</p>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h5>Navigate</h5>
           <a href="index.html">Home</a>
           <a href="inventory.html">Browse Rentals</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h4>Top Categories</h4>
+          <h5>Top Categories</h5>
           <a href="inventory.html?category=inflatables-rentals">Inflatables</a>
           <a href="inventory.html?category=entertainment-games-rentals">Games</a>
           <a href="inventory.html?category=decor-rentals">Décor</a>
@@ -124,15 +110,15 @@
           <a href="inventory.html?category=food-service-rentals">Food & Beverage</a>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="tel:+19025551234">📞 (902) 555-1234</a>
-          <a href="mailto:hello@vertexevents.ca">✉️ hello@vertexevents.ca</a>
-          <a href="#">📍 Halifax, Nova Scotia</a>
+          <h5>Contact</h5>
+          <a href="tel:+19025551234">(902) 555-1234</a>
+          <a href="mailto:hello@vertexevents.ca">hello@vertexevents.ca</a>
+          <a href="#">Halifax, Nova Scotia</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Vertex Events. All rights reserved.</span>
-        <span>Powered by <a href="https://pro.goodshuffle.com" style="color:var(--blue-400);">Goodshuffle Pro</a></span>
+        <span>Inventory powered by <a href="https://pro.goodshuffle.com">Goodshuffle Pro</a></span>
       </div>
     </div>
   </footer>

@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — Vertex Events</title>
-  <meta name="description" content="Vertex Events offers full-service event production including inflatables, entertainment services, decor, tent installation, catering equipment, and more in Halifax, NS." />
+  <meta name="description" content="Vertex Events offers comprehensive event services in Halifax — inflatables, entertainment, décor, tents, food equipment, and full production." />
 
-  <!-- Goodshuffle Pro Integration -->
-  <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5/dist/gspro-wc/gspro-wc.esm.js"></script>
-  <script nomodule src="https://unpkg.com/@goodshuffle/gspro-wc@0.5/dist/gspro-wc/gspro-wc.js"></script>
+  <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.js"></script>
   <gspro-wishlist-config data-url="https://data.goodshuffle.com/vendor/Onv97vozQ68q0Iimwx7LZRZBMHp6ah"></gspro-wishlist-config>
 
   <link rel="stylesheet" href="css/style.css" />
@@ -16,112 +15,107 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="logo-icon">⚡</div>
-        Vertex<span class="accent">Events</span>
-      </a>
+      <a href="index.html" class="nav-wordmark">Vertex<span>Events</span></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="inventory.html">Browse Rentals</a></li>
         <li><a href="services.html" class="active">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-cta">
+      <div class="nav-right">
         <gspro-wishlist-button></gspro-wishlist-button>
         <a href="contact.html" class="btn btn-primary">Get a Quote</a>
       </div>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-close" id="mobile-close">✕</button>
     <a href="index.html">Home</a>
     <a href="inventory.html">Browse Rentals</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html" class="btn btn-primary" style="margin-top:16px;">Get a Quote</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Get a Quote</a>
   </div>
 
-  <!-- Page Hero -->
-  <div class="page-hero services-hero">
-    <div class="glow-orb" style="width:500px;height:500px;background:rgba(37,99,235,0.2);top:-100px;left:50%;transform:translateX(-50%);"></div>
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="pill" style="margin-bottom:16px;">Full-Service Event Company</div>
-      <h1>Everything You Need to<br /><span class="gradient-text">Make It Unforgettable</span></h1>
-      <p style="max-width:600px;margin:16px auto 0;font-size:1.05rem;">We don't just rent — we deliver, set up, and support every aspect of your event from start to finish.</p>
+  <div class="page-hero">
+    <div class="container">
+      <p class="page-hero-label">Full-Service Event Production</p>
+      <h1>Everything You Need<br /><em style="font-style:italic;">To Make It Unforgettable.</em></h1>
+      <p>We deliver, set up, and support every part of your event — from first call to final takedown.</p>
     </div>
   </div>
 
-  <!-- Main Services -->
   <main>
-
-    <!-- Service Blocks -->
-    <section>
+    <!-- Services list -->
+    <section class="svc-list-section">
       <div class="container">
 
-        <div class="service-block reveal">
-          <div class="service-visual">
-            <div class="service-emoji">🎪</div>
-            <div class="service-bg-glow"></div>
+        <div class="svc-row fade-up">
+          <div class="svc-row-meta">
+            <span class="label" style="color:var(--text-3);">01</span>
+            <h2 class="svc-row-title">Inflatables</h2>
+            <span class="svc-count label">206 items</span>
           </div>
-          <div class="service-text">
-            <div class="pill" style="margin-bottom:12px;">206 Items</div>
-            <h2>Inflatables</h2>
-            <p>Our inflatable division is the largest in our inventory with 206 units ready to deploy. Whether you need a simple bounce house for a birthday party or a massive multi-lane obstacle course for a corporate field day, we've got the right inflatable for you.</p>
-            <ul class="service-list">
-              <li>Bounce Houses (21 options)</li>
-              <li>Obstacle Courses (23 options)</li>
-              <li>Combo Bouncer-Slides (15 options)</li>
-              <li>Competitive Inflatables (37 options)</li>
-              <li>Giant Inflatable Décor (91 options)</li>
-              <li>Water Slide & Ball Crawls</li>
+          <div class="svc-row-img">
+            <img src="https://images.unsplash.com/photo-1566738780863-f9608f88f3a9?w=800&q=75&auto=format&fit=crop" alt="Inflatables" />
+          </div>
+          <div class="svc-row-body">
+            <p>Our inflatable division is the most extensive in our catalog — 206 units ready to deploy for events of any size. From backyard birthday parties to large-scale festivals.</p>
+            <ul class="svc-list">
+              <li>Bounce Houses — 21 configurations</li>
+              <li>Obstacle Courses — 23 configurations</li>
+              <li>Combo Bouncers & Slides — 15 options</li>
+              <li>Competitive Inflatables — 37 units</li>
+              <li>Giant Inflatable Décor — 91 units</li>
+              <li>Water Slides & Ball Crawls</li>
             </ul>
-            <a href="inventory.html?category=inflatables-rentals" class="btn btn-primary">Browse Inflatables →</a>
+            <a href="inventory.html?category=inflatables-rentals" class="btn btn-outline">Browse Inflatables</a>
           </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="svc-divider"></div>
 
-        <div class="service-block service-block--reverse reveal">
-          <div class="service-visual">
-            <div class="service-emoji">🎮</div>
-            <div class="service-bg-glow"></div>
+        <div class="svc-row svc-row--flip fade-up">
+          <div class="svc-row-meta">
+            <span class="label" style="color:var(--text-3);">02</span>
+            <h2 class="svc-row-title">Games & Entertainment Rentals</h2>
+            <span class="svc-count label">95 items</span>
           </div>
-          <div class="service-text">
-            <div class="pill" style="margin-bottom:12px;">95 Items</div>
-            <h2>Games & Entertainment</h2>
-            <p>From family-friendly carnival games to high-stakes casino nights and immersive virtual reality stations — our entertainment rentals will keep your guests engaged all night long.</p>
-            <ul class="service-list">
-              <li>Carnival Games (43 options)</li>
-              <li>Casino Games (11 options)</li>
-              <li>Photo Booths (7 options)</li>
-              <li>Mini Golf Courses (7 holes)</li>
-              <li>Mechanical Rides (6 options)</li>
-              <li>Lawn & Backyard Games, Arcade, VR</li>
+          <div class="svc-row-img">
+            <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&q=75&auto=format&fit=crop" alt="Entertainment Games" />
+          </div>
+          <div class="svc-row-body">
+            <p>From classic carnival midways to high-stakes casino nights, our game rentals keep guests engaged from cocktail hour to last call.</p>
+            <ul class="svc-list">
+              <li>Carnival Games — 43 options</li>
+              <li>Casino Table Games — 11 options</li>
+              <li>Photo Booths — 7 setups</li>
+              <li>Mini Golf — 7-hole courses</li>
+              <li>Mechanical Rides, Arcade & VR</li>
+              <li>Lawn & Relay Games</li>
             </ul>
-            <a href="inventory.html?category=entertainment-games-rentals" class="btn btn-primary">Browse Games →</a>
+            <a href="inventory.html?category=entertainment-games-rentals" class="btn btn-outline">Browse Games</a>
           </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="svc-divider"></div>
 
-        <div class="service-block reveal">
-          <div class="service-visual">
-            <div class="service-emoji">🎭</div>
-            <div class="service-bg-glow"></div>
+        <div class="svc-row fade-up">
+          <div class="svc-row-meta">
+            <span class="label" style="color:var(--text-3);">03</span>
+            <h2 class="svc-row-title">Live Entertainment Services</h2>
+            <span class="svc-count label">100 services</span>
           </div>
-          <div class="service-text">
-            <div class="pill" style="margin-bottom:12px;">100 Services</div>
-            <h2>Live Entertainment Services</h2>
-            <p>Book professional performers and entertainment specialists directly through Vertex Events. Our talent roster brings personality, energy, and expertise to any event format.</p>
-            <ul class="service-list">
+          <div class="svc-row-img">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=75&auto=format&fit=crop" alt="Entertainment" />
+          </div>
+          <div class="svc-row-body">
+            <p>Book professional talent directly through Vertex Events. Our roster brings energy, personality, and expertise to corporate events, festivals, and private parties alike.</p>
+            <ul class="svc-list">
               <li>MCs & Event Hosts</li>
               <li>Balloon Artists</li>
               <li>Casino Dealers</li>
@@ -129,126 +123,118 @@
               <li>Clown & Character Performers</li>
               <li>Custom Entertainment Packages</li>
             </ul>
-            <a href="inventory.html?category=entertainment-services" class="btn btn-primary">Browse Talent →</a>
+            <a href="inventory.html?category=entertainment-services" class="btn btn-outline">Browse Talent</a>
           </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="svc-divider"></div>
 
-        <div class="service-block service-block--reverse reveal">
-          <div class="service-visual">
-            <div class="service-emoji">✨</div>
-            <div class="service-bg-glow"></div>
+        <div class="svc-row svc-row--flip fade-up">
+          <div class="svc-row-meta">
+            <span class="label" style="color:var(--text-3);">04</span>
+            <h2 class="svc-row-title">Décor & Styling</h2>
+            <span class="svc-count label">79 items</span>
           </div>
-          <div class="service-text">
-            <div class="pill" style="margin-bottom:12px;">79 Items</div>
-            <h2>Décor & Styling</h2>
-            <p>Transform any venue with our extensive décor collection. Mix and match pieces to create the perfect aesthetic — whether it's an elegant gala or an energetic outdoor festival.</p>
-            <ul class="service-list">
-              <li>Backdrops & Photo Walls (26 options)</li>
-              <li>Floral Arches & Balloon Arches (24 options)</li>
-              <li>Giant Air Dancers (8 options)</li>
-              <li>Props & Statement Pieces (16 options)</li>
-              <li>Balloons, Mirrors, Florals</li>
+          <div class="svc-row-img">
+            <img src="https://images.unsplash.com/photo-1561912774-79769a0a0a7a?w=800&q=75&auto=format&fit=crop" alt="Decor" />
+          </div>
+          <div class="svc-row-body">
+            <p>Transform any venue with our décor collection — mix and match pieces across styles, palettes, and scales to create the right atmosphere for your event.</p>
+            <ul class="svc-list">
+              <li>Backdrops & Photo Walls — 26 options</li>
+              <li>Floral & Balloon Arches — 24 options</li>
+              <li>Giant Air Dancers — 8 options</li>
+              <li>Props & Statement Pieces — 16 items</li>
+              <li>Balloons, Florals, Mirrors</li>
               <li>Marquee Signs & LED Letters</li>
             </ul>
-            <a href="inventory.html?category=decor-rentals" class="btn btn-primary">Browse Décor →</a>
+            <a href="inventory.html?category=decor-rentals" class="btn btn-outline">Browse Décor</a>
           </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="svc-divider"></div>
 
-        <div class="service-block reveal">
-          <div class="service-visual">
-            <div class="service-emoji">⛺</div>
-            <div class="service-bg-glow"></div>
+        <div class="svc-row fade-up">
+          <div class="svc-row-meta">
+            <span class="label" style="color:var(--text-3);">05</span>
+            <h2 class="svc-row-title">Tents & Canopies</h2>
+            <span class="svc-count label">51 items</span>
           </div>
-          <div class="service-text">
-            <div class="pill" style="margin-bottom:12px;">51 Items</div>
-            <h2>Tents & Canopies</h2>
-            <p>Professional tent setups for any size event. From intimate 10×10 pop-ups to grand 40×20 frame tents, we handle full delivery, professional installation, and teardown.</p>
-            <ul class="service-list">
+          <div class="svc-row-img">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=75&auto=format&fit=crop" alt="Tents" />
+          </div>
+          <div class="svc-row-body">
+            <p>Professional tent installation for any event size. We handle delivery, setup, and teardown — so your venue is ready when guests arrive.</p>
+            <ul class="svc-list">
               <li>37 Tent & Canopy Configurations</li>
               <li>Sizes: 10×10 up to 40×20 ft.</li>
               <li>Sidewalls, Poles & Fittings</li>
-              <li>Tent Décor & Drape Included Options</li>
-              <li>Indoor/Outdoor Setups</li>
-              <li>Professional Installation & Teardown</li>
+              <li>Tent Décor & Drape Options</li>
+              <li>Indoor & Outdoor Setups</li>
+              <li>Full Professional Installation</li>
             </ul>
-            <a href="inventory.html?category=tent-canopy-rentals" class="btn btn-primary">Browse Tents →</a>
+            <a href="inventory.html?category=tent-canopy-rentals" class="btn btn-outline">Browse Tents</a>
           </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="svc-divider"></div>
 
-        <div class="service-block service-block--reverse reveal">
-          <div class="service-visual">
-            <div class="service-emoji">🍿</div>
-            <div class="service-bg-glow"></div>
+        <div class="svc-row svc-row--flip fade-up">
+          <div class="svc-row-meta">
+            <span class="label" style="color:var(--text-3);">06</span>
+            <h2 class="svc-row-title">Food & Beverage Equipment</h2>
+            <span class="svc-count label">60 items</span>
           </div>
-          <div class="service-text">
-            <div class="pill" style="margin-bottom:12px;">60 Items</div>
-            <h2>Food & Beverage Equipment</h2>
-            <p>Add a crowd-pleasing food station to your event with our concession machine rentals. From classic carnival snacks to gourmet food stations — we supply the equipment.</p>
-            <ul class="service-list">
-              <li>Popcorn, Cotton Candy & Snow Cone Machines</li>
-              <li>Slushie & Frozen Beverage Machines</li>
+          <div class="svc-row-img">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=75&auto=format&fit=crop" alt="Food Beverage" />
+          </div>
+          <div class="svc-row-body">
+            <p>Add a food station that guests will line up for. We supply the machines, supplies, and equipment — you focus on the fun.</p>
+            <ul class="svc-list">
+              <li>Popcorn, Cotton Candy, Snow Cone</li>
+              <li>Slushy & Frozen Beverage Machines</li>
               <li>Hot Dog Rollers & Nacho Warmers</li>
-              <li>Concession Supplies & Serving Accessories</li>
+              <li>Concession Supplies & Accessories</li>
               <li>Warming Trays & Catering Equipment</li>
               <li>Bars, Buffet Tables & Serving Stations</li>
             </ul>
-            <a href="inventory.html?category=food-service-rentals" class="btn btn-primary">Browse Food Equip. →</a>
+            <a href="inventory.html?category=food-service-rentals" class="btn btn-outline">Browse Food Equipment</a>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Additional Services Grid -->
-    <section style="background:var(--bg-dark);">
+    <!-- Additional -->
+    <section style="background:var(--bg-2);border-top:1px solid var(--line);">
       <div class="container">
-        <div class="section-header reveal">
-          <div class="pill">Also Available</div>
-          <h2>More Services & <span class="gradient-text">Rentals</span></h2>
-        </div>
-        <div class="grid-3 addon-grid">
-          <div class="card reveal">
-            <div class="addon-icon">🔊</div>
-            <h4>Pro Audio</h4>
-            <p>Speakers, microphones, mixers for speeches, music, and live events.</p>
-            <a href="inventory.html?category=pro-audio-rentals" class="addon-link">Browse →</a>
-          </div>
-          <div class="card reveal reveal-delay-1">
-            <div class="addon-icon">💡</div>
-            <h4>Pro Lighting</h4>
-            <p>Moving heads, LED effects, black lights, scanners for any atmosphere.</p>
-            <a href="inventory.html?category=lighting-rentals" class="addon-link">Browse →</a>
-          </div>
-          <div class="card reveal reveal-delay-2">
-            <div class="addon-icon">🎆</div>
-            <h4>Visual Effects</h4>
-            <p>CO₂ jets, fog machines, fireworks & bubble effects for dramatic moments.</p>
-            <a href="inventory.html?category=visual-effect-rentals" class="addon-link">Browse →</a>
-          </div>
-          <div class="card reveal">
-            <div class="addon-icon">📺</div>
-            <h4>Pro Video</h4>
-            <p>Projectors, screens, TVs and video walls for presentations and shows.</p>
-            <a href="inventory.html?category=pro-video-rentals" class="addon-link">Browse →</a>
-          </div>
-          <div class="card reveal reveal-delay-1">
-            <div class="addon-icon">🛋️</div>
-            <h4>Furniture</h4>
-            <p>Throne chairs, sectionals, bars, cocktail tables, and premium seating.</p>
-            <a href="inventory.html?category=furniture-rentals" class="addon-link">Browse →</a>
-          </div>
-          <div class="card reveal reveal-delay-2">
-            <div class="addon-icon">⚡</div>
-            <h4>Power & Generators</h4>
-            <p>Generators and power stations to keep your event running anywhere.</p>
-            <a href="inventory.html?category=power-rentals" class="addon-link">Browse →</a>
-          </div>
+        <p class="section-label fade-up">Also Available</p>
+        <h2 class="section-title fade-up delay-1" style="margin-bottom:48px;">More services & rentals</h2>
+        <div class="also-grid">
+          <a href="inventory.html?category=pro-audio-rentals" class="also-item fade-up">
+            <span class="also-n label">07</span>
+            <div><h4>Pro Audio</h4><p>Speakers, microphones & mixers</p></div>
+          </a>
+          <a href="inventory.html?category=lighting-rentals" class="also-item fade-up delay-1">
+            <span class="also-n label">08</span>
+            <div><h4>Pro Lighting</h4><p>Moving heads, LED, scanners</p></div>
+          </a>
+          <a href="inventory.html?category=visual-effect-rentals" class="also-item fade-up delay-2">
+            <span class="also-n label">09</span>
+            <div><h4>Visual Effects</h4><p>CO₂ jets, fog, fireworks</p></div>
+          </a>
+          <a href="inventory.html?category=pro-video-rentals" class="also-item fade-up">
+            <span class="also-n label">10</span>
+            <div><h4>Pro Video</h4><p>Screens, projectors, video walls</p></div>
+          </a>
+          <a href="inventory.html?category=furniture-rentals" class="also-item fade-up delay-1">
+            <span class="also-n label">11</span>
+            <div><h4>Furniture & Lounge</h4><p>Thrones, sectionals, bars, tables</p></div>
+          </a>
+          <a href="inventory.html?category=power-rentals" class="also-item fade-up delay-2">
+            <span class="also-n label">12</span>
+            <div><h4>Power & Generators</h4><p>Keep your event running anywhere</p></div>
+          </a>
         </div>
       </div>
     </section>
@@ -256,42 +242,35 @@
     <!-- CTA -->
     <section>
       <div class="container">
-        <div class="cta-card reveal">
-          <div class="cta-glow"></div>
-          <div class="cta-content">
-            <h2>Let's Plan Your <span class="gradient-text">Event Together</span></h2>
-            <p>Tell us about your event and we'll recommend the perfect combination of rentals and services.</p>
-            <div class="cta-btns">
-              <a href="inventory.html" class="btn btn-primary btn-lg">Browse Full Inventory</a>
-              <a href="contact.html" class="btn btn-ghost btn-lg">Get a Custom Quote</a>
-            </div>
+        <div class="svc-cta fade-up">
+          <p class="section-label label-blue">Ready to plan?</p>
+          <h2 class="section-title">Let's build your event together.</h2>
+          <p class="section-sub">Tell us about your vision and we'll handle the rest — from rental selection to setup and teardown.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px;">
+            <a href="inventory.html" class="btn btn-primary">Browse Full Inventory</a>
+            <a href="contact.html" class="btn btn-outline">Get a Custom Quote</a>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-main">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            <div class="logo-icon">⚡</div>
-            Vertex<span class="accent">Events</span>
-          </a>
-          <p>Halifax's premier event rental company. From inflatables to full event production, we've got you covered.</p>
+          <a href="index.html" class="nav-wordmark">Vertex<span>Events</span></a>
+          <p>Halifax's premier event rental company. From inflatables to full event production.</p>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h5>Navigate</h5>
           <a href="index.html">Home</a>
           <a href="inventory.html">Browse Rentals</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h4>Top Categories</h4>
+          <h5>Top Categories</h5>
           <a href="inventory.html?category=inflatables-rentals">Inflatables</a>
           <a href="inventory.html?category=entertainment-games-rentals">Games</a>
           <a href="inventory.html?category=decor-rentals">Décor</a>
@@ -299,15 +278,15 @@
           <a href="inventory.html?category=food-service-rentals">Food & Beverage</a>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="tel:+19025551234">📞 (902) 555-1234</a>
-          <a href="mailto:hello@vertexevents.ca">✉️ hello@vertexevents.ca</a>
-          <a href="#">📍 Halifax, Nova Scotia</a>
+          <h5>Contact</h5>
+          <a href="tel:+19025551234">(902) 555-1234</a>
+          <a href="mailto:hello@vertexevents.ca">hello@vertexevents.ca</a>
+          <a href="#">Halifax, Nova Scotia</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Vertex Events. All rights reserved.</span>
-        <span>Powered by <a href="https://pro.goodshuffle.com" style="color:var(--blue-400);">Goodshuffle Pro</a></span>
+        <span>Inventory powered by <a href="https://pro.goodshuffle.com">Goodshuffle Pro</a></span>
       </div>
     </div>
   </footer>

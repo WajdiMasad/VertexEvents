@@ -1,44 +1,25 @@
-/* ============================================================
-   Vertex Events — inventory.js  (category filter)
-   ============================================================ */
-
+/* inventory.js — fix: uses category="" attribute per Goodshuffle docs */
 (function () {
-  const filterBtns  = document.querySelectorAll('.filter-btn');
-  const gsList      = document.getElementById('gs-items');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const gsList     = document.getElementById('gs-items');
 
-  // Apply category from URL param on load
-  const urlParams = new URLSearchParams(window.location.search);
-  const initCat   = urlParams.get('category') || '';
-
+  // Apply from URL param on load
+  const initCat = new URLSearchParams(window.location.search).get('category') || '';
   if (initCat && gsList) {
-    gsList.setAttribute('data-category', initCat);
-    filterBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.cat === initCat);
-    });
+    gsList.setAttribute('category', initCat);
+    filterBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.cat === initCat));
   }
 
-  // Filter button clicks
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       const cat = btn.dataset.cat;
       if (gsList) {
-        if (cat) {
-          gsList.setAttribute('data-category', cat);
-        } else {
-          gsList.removeAttribute('data-category');
-        }
+        cat ? gsList.setAttribute('category', cat) : gsList.removeAttribute('category');
       }
-
-      // Update URL without reload
       const url = new URL(window.location);
-      if (cat) {
-        url.searchParams.set('category', cat);
-      } else {
-        url.searchParams.delete('category');
-      }
+      cat ? url.searchParams.set('category', cat) : url.searchParams.delete('category');
       window.history.pushState({}, '', url);
     });
   });
