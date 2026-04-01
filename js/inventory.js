@@ -5,28 +5,22 @@
   const panels   = document.querySelectorAll('.sub-panel');
   const subLinks = document.querySelectorAll('.sub-link');
 
-  // Helper: get all tags from a panel's sub-links
-  function getPanelTags(group) {
-    const panel = document.querySelector(`.sub-panel[data-panel="${group}"]`);
-    if (!panel) return '';
-    const links = panel.querySelectorAll('.sub-link[data-tag]');
-    return Array.from(links).map(l => l.dataset.tag).join(',');
-  }
-
   // Helper: apply a filter to Goodshuffle
-  function applyFilter(tag) {
+  function applyFilter(opts) {
     if (!gsList) return;
     gsList.removeAttribute('category');
     gsList.removeAttribute('tags');
-    if (tag) gsList.setAttribute('tags', tag);
+    if (opts.category) gsList.setAttribute('category', opts.category);
+    if (opts.tag) gsList.setAttribute('tags', opts.tag);
   }
 
   // Helper: update the URL
-  function updateURL(tag) {
+  function updateURL(opts) {
     const url = new URL(window.location);
     url.searchParams.delete('category');
     url.searchParams.delete('tags');
-    if (tag) url.searchParams.set('tags', tag);
+    if (opts.category) url.searchParams.set('category', opts.category);
+    if (opts.tag) url.searchParams.set('tags', opts.tag);
     window.history.pushState({}, '', url);
   }
 
@@ -48,12 +42,24 @@
         const panel = link.closest('.sub-panel');
         if (panel) {
           const group = panel.dataset.panel;
-          catTabs.forEach(t => {
-            t.classList.toggle('active', t.dataset.group === group);
-          });
+          catTabs.forEach(t => t.classList.toggle('active', t.dataset.group === group));
           panels.forEach(p => p.classList.remove('open'));
           panel.classList.add('open');
         }
+      }
+    });
+  }
+
+  // If a category param is present, find the matching tab and activate it
+  if (initCat) {
+    catTabs.forEach(tab => {
+      if (tab.dataset.category === initCat) {
+        catTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const group = tab.dataset.group;
+        panels.forEach(p => p.classList.remove('open'));
+        const panel = document.querySelector(`.sub-panel[data-panel="${group}"]`);
+        if (panel) panel.classList.add('open');
       }
     });
   }
@@ -62,6 +68,7 @@
   catTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const group = tab.dataset.group;
+      const category = tab.dataset.category || '';
 
       // Update active tab
       catTabs.forEach(t => t.classList.remove('active'));
@@ -75,17 +82,18 @@
 
       if (group === 'all') {
         // Show everything
-        applyFilter('');
-        updateURL('');
+        applyFilter({});
+        updateURL({});
       } else {
         // Open the sub-panel
         const target = document.querySelector(`.sub-panel[data-panel="${group}"]`);
         if (target) target.classList.add('open');
 
-        // Show ALL items in this category by combining all its tags
-        const allTags = getPanelTags(group);
-        applyFilter(allTags);
-        updateURL(allTags);
+        if (category) {
+          // Use the Goodshuffle category slug to show all items in this group
+          applyFilter({ category: category });
+          updateURL({ category: category });
+        }
       }
     });
   });
@@ -101,8 +109,8 @@
       link.classList.add('active');
 
       // Filter to this single tag
-      applyFilter(tag);
-      updateURL(tag);
+      applyFilter({ tag: tag });
+      updateURL({ tag: tag });
     });
   });
 })();
