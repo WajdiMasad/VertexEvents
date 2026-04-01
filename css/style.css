@@ -454,6 +454,57 @@ gspro-item-card *:not(img) {
   color: #fff !important;
 }
 
+/* Wishlist button — white bg, blue + icon */
+gspro-wishlist-button,
+gspro-wishlist-button .gspro-o-button,
+gspro-wishlist-button .gspro-o-button--icon,
+gspro-wishlist-button button {
+  background-color: #fff !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 50% !important;
+  color: var(--blue) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  position: relative !important;
+}
+/* Hide the default heart icon/svg */
+gspro-wishlist-button svg,
+gspro-wishlist-button .gspro-o-button__icon,
+gspro-wishlist-button .gspro-o-icon {
+  display: none !important;
+}
+/* Replace with + */
+gspro-wishlist-button .gspro-o-button::after,
+gspro-wishlist-button button::after {
+  content: '+' !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  color: var(--blue) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Also style the per-item add/wishlist buttons on cards */
+.gspro-o-button--icon,
+gspro-item-card .gspro-o-button--icon {
+  background-color: #fff !important;
+  border: none !important;
+  border-radius: 50% !important;
+  color: var(--blue) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+}
+.gspro-o-button--icon svg,
+gspro-item-card .gspro-o-button--icon svg {
+  display: none !important;
+}
+.gspro-o-button--icon::after,
+gspro-item-card .gspro-o-button--icon::after {
+  content: '+' !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: var(--blue) !important;
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .footer-main { grid-template-columns: 1fr 1fr; gap: 32px; }
