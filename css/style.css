@@ -439,10 +439,23 @@ footer {
 gspro-item-list,
 gspro-wishlist {
   --gspro-primary-color: #2357d9;
-  --gspro-item-background-color: #2357d9;
-  --gspro-item-color: #ffffff;
-  --gspro-item-border-color: transparent;
   display: block;
+}
+
+/* Item card — royal blue background with white text */
+.gspro-c-item-card,
+gspro-item-card {
+  background-color: var(--blue) !important;
+  color: #fff !important;
+  border: none !important;
+}
+.gspro-c-item-card__detail,
+.gspro-o-card__detail {
+  color: #fff !important;
+}
+.gspro-c-item-card__detail *,
+.gspro-o-card__detail * {
+  color: #fff !important;
 }
 
 /* ── Responsive ── */
