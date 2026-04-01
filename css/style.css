@@ -458,7 +458,8 @@ gspro-item-card *:not(img) {
 gspro-wishlist-button,
 gspro-wishlist-button .gspro-o-button,
 gspro-wishlist-button .gspro-o-button--icon,
-gspro-wishlist-button button {
+gspro-wishlist-button button,
+.gspro-c-wishlist__trigger {
   background-color: #fff !important;
   border: 1px solid var(--line) !important;
   border-radius: 50% !important;
@@ -471,12 +472,15 @@ gspro-wishlist-button button {
 /* Hide the default heart icon/svg */
 gspro-wishlist-button svg,
 gspro-wishlist-button .gspro-o-button__icon,
-gspro-wishlist-button .gspro-o-icon {
+gspro-wishlist-button .gspro-o-icon,
+.gspro-c-wishlist__trigger svg,
+.gspro-c-wishlist__trigger .gspro-o-icon {
   display: none !important;
 }
 /* Replace with bold + */
 gspro-wishlist-button .gspro-o-button::after,
-gspro-wishlist-button button::after {
+gspro-wishlist-button button::after,
+.gspro-c-wishlist__trigger::after {
   content: '+' !important;
   font-size: 24px !important;
   font-weight: 700 !important;
