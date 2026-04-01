@@ -497,15 +497,11 @@ gspro-item-card *:not(img) {
   90% { transform: translate(-10%,10%); }
 }
 
-/* Custom Cursor */
-body.has-custom-cursor,
-body.has-custom-cursor a,
-body.has-custom-cursor button,
-body.has-custom-cursor input,
-body.has-custom-cursor textarea,
-body.has-custom-cursor select {
-  cursor: none !important;
-}
+/* Custom Cursor — disabled */
+.cursor, .cursor-follower { display: none !important; }
+
+/* Theme Toggle — hidden (light only) */
+.theme-toggle { display: none !important; }
 
 .cursor, .cursor-follower {
   position: fixed;

@@ -47,65 +47,9 @@ window.addEventListener('load', () => {
   }
 });
 
-// ── 3. CUSTOM MAGNETIC CURSOR ──
+// ── 3. CUSTOM CURSOR (disabled — using default cursor) ──
 (function initCursor() {
-  const cursor = document.querySelector('.cursor');
-  const follower = document.querySelector('.cursor-follower');
-  if (!cursor || !follower) return;
-
-  let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-  let cursorX = mouseX, cursorY = mouseY;
-  let followerX = mouseX, followerY = mouseY;
-  
-  // Track mouse
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    // Only show cursor after first move (avoids it sitting middle of screen)
-    if (!document.body.classList.contains('has-custom-cursor')) {
-      document.body.classList.add('has-custom-cursor');
-      cursor.style.opacity = '1';
-      follower.style.opacity = '1';
-    }
-  });
-
-  // Lerp loop for follower
-  function renderCursor() {
-    cursorX += (mouseX - cursorX) * 0.5;
-    cursorY += (mouseY - cursorY) * 0.5;
-    followerX += (mouseX - followerX) * 0.15;
-    followerY += (mouseY - followerY) * 0.15;
-
-    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
-    follower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
-    
-    requestAnimationFrame(renderCursor);
-  }
-  requestAnimationFrame(renderCursor);
-
-  // Hover states
-  document.querySelectorAll('a, button, .theme-toggle, input, select, textarea, gspro-wishlist-button').forEach(el => {
-    el.addEventListener('mouseenter', () => follower.classList.add('active'));
-    el.addEventListener('mouseleave', () => follower.classList.remove('active'));
-  });
-
-  // Magnetic Buttons
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const h = rect.width / 2;
-      const x = e.clientX - rect.left - h;
-      const y = e.clientY - rect.top - (rect.height / 2);
-      
-      gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: "power2.out" });
-      follower.classList.add('magnetic');
-    });
-    btn.addEventListener('mouseleave', () => {
-      gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.3)" });
-      follower.classList.remove('magnetic');
-    });
-  });
+  return; // default cursor
 })();
 
 // ── 4. SCROLL REVEALS (GSAP + SplitType) ──
@@ -183,36 +127,10 @@ function initScrollReveals() {
   });
 }
 
-// ── 5. THEME TOGGLE ──
+// ── 5. THEME (light only) ──
 (function initTheme() {
-  const DARK = 'dark';
-  const KEY  = 'vx-theme';
-  const saved = localStorage.getItem(KEY);
-  if (saved === DARK) html.setAttribute('data-theme', DARK);
-
-  function setToggleState(isDark) {
-    document.querySelectorAll('.theme-toggle-icon').forEach((el, i) => {
-      if (i === 0) el.textContent = isDark ? '🌙' : '☀️';
-    });
-  }
-
-  function toggleTheme() {
-    const isDark = html.getAttribute('data-theme') === DARK;
-    if (isDark) {
-      html.removeAttribute('data-theme');
-      localStorage.setItem(KEY, 'light');
-      setToggleState(false);
-    } else {
-      html.setAttribute('data-theme', DARK);
-      localStorage.setItem(KEY, DARK);
-      setToggleState(true);
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    setToggleState(html.getAttribute('data-theme') === DARK);
-    document.querySelectorAll('.theme-toggle').forEach(btn => btn.addEventListener('click', toggleTheme));
-  });
+  html.removeAttribute('data-theme');
+  localStorage.removeItem('vx-theme');
 })();
 
 // ── 6. NAVBAR & MOBILE MENU ──
