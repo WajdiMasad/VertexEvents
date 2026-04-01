@@ -442,19 +442,15 @@ gspro-wishlist {
   display: block;
 }
 
-/* Item card — royal blue background with white text */
-.gspro-c-item-card,
-gspro-item-card {
+/* Item card — royal blue, no border, white text */
+gspro-item-card,
+gspro-item-card.gspro-c-item-card,
+gspro-item-card.hydrated {
   background-color: var(--blue) !important;
-  color: #fff !important;
-  border: none !important;
-}
-.gspro-c-item-card__detail,
-.gspro-o-card__detail {
+  border-color: var(--blue) !important;
   color: #fff !important;
 }
-.gspro-c-item-card__detail *,
-.gspro-o-card__detail * {
+gspro-item-card *:not(img) {
   color: #fff !important;
 }
 
