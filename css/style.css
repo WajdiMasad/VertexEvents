@@ -439,6 +439,9 @@ footer {
 gspro-item-list,
 gspro-wishlist {
   --gspro-primary-color: #2357d9;
+  --gspro-item-background-color: #2357d9;
+  --gspro-item-color: #ffffff;
+  --gspro-item-border-color: transparent;
   display: block;
 }
 
