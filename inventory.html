@@ -58,45 +58,101 @@
     <a href="contact.html" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Get a Quote</a>
   </div>
 
-  <!-- Page Hero — compact like Kadeema -->
+  <!-- Page Hero -->
   <div class="page-hero">
     <div class="container">
       <h1>Browse Our <em style="font-style:italic;color:var(--blue-3);">Inventory</em></h1>
     </div>
   </div>
 
-  <!-- Category Navigation — centered text links like Kadeema -->
-  <div class="cat-nav">
+  <!-- Category + Sub-category Navigation -->
+  <div class="cat-nav" id="cat-nav">
     <div class="container">
-      <div class="cat-nav-links">
-        <a href="inventory.html" class="cat-link active" data-tag="">All Items</a>
-        <a href="#" class="cat-link" data-tag="Basic Bouncer">Bouncers</a>
-        <a href="#" class="cat-link" data-tag="Combo Bouncers">Combo Bouncers</a>
-        <a href="#" class="cat-link" data-tag="Obstacle Courses">Obstacle Courses</a>
-        <a href="#" class="cat-link" data-tag="Inflatable Slide">Slides</a>
-        <a href="#" class="cat-link" data-tag="Inflatable Games">Inflatable Games</a>
-        <a href="#" class="cat-link" data-tag="Carnival Games">Carnival Games</a>
-        <a href="#" class="cat-link" data-tag="Mechanical Rides">Mechanical Rides</a>
-        <a href="#" class="cat-link" data-tag="Arcade">Arcade</a>
-        <a href="#" class="cat-link" data-tag="Extreme Sports">Extreme Sports</a>
-        <a href="#" class="cat-link" data-tag="Zorb Balls">Zorb Balls</a>
-        <a href="#" class="cat-link" data-tag="Cotton Candy">Cotton Candy</a>
-        <a href="#" class="cat-link" data-tag="Snow Cone">Snow Cones</a>
-        <a href="#" class="cat-link" data-tag="Popcorn">Popcorn</a>
-        <a href="#" class="cat-link" data-tag="Photobooth">Photo Booths</a>
-        <a href="#" class="cat-link" data-tag="Tents">Tents</a>
-        <a href="#" class="cat-link" data-tag="Inflatable Decor">Inflatable Décor</a>
-        <a href="#" class="cat-link" data-tag="Arch">Archways</a>
-        <a href="#" class="cat-link" data-tag="Props">Props</a>
-        <a href="#" class="cat-link" data-tag="Air Dancers">Air Dancers</a>
-        <a href="#" class="cat-link" data-tag="Table">Tables</a>
-        <a href="#" class="cat-link" data-tag="Chair">Chairs</a>
-        <a href="#" class="cat-link" data-tag="Furniture">Furniture</a>
-        <a href="#" class="cat-link" data-tag="Stage">Staging</a>
-        <a href="#" class="cat-link" data-tag="Equipment">Sound + Lighting</a>
-        <a href="#" class="cat-link" data-tag="Screen">Movie Screens</a>
-        <a href="#" class="cat-link" data-tag="Power">Power + Generators</a>
+
+      <!-- Top-level category tabs -->
+      <div class="cat-tabs">
+        <button class="cat-tab active" data-group="all">All Items</button>
+        <button class="cat-tab" data-group="inflatables">Inflatables & Games</button>
+        <button class="cat-tab" data-group="mechanical">Mechanical & Arcade</button>
+        <button class="cat-tab" data-group="entertainment">Entertainment Artists</button>
+        <button class="cat-tab" data-group="equipment">Equipment Rentals</button>
+        <button class="cat-tab" data-group="tents">Tents & Accessories</button>
+        <button class="cat-tab" data-group="decor">Décor & Event Rentals</button>
+        <button class="cat-tab" data-group="themes">Themes & Event Ideas</button>
       </div>
+
+      <!-- Sub-category panels (hidden by default, shown when parent tab is active) -->
+      <div class="sub-panel" data-panel="inflatables">
+        <a href="#" class="sub-link" data-tag="Basic Bouncer">Basic Bouncers</a>
+        <a href="#" class="sub-link" data-tag="Combo Bouncers">Combo Bouncers</a>
+        <a href="#" class="sub-link" data-tag="Interactive Combos">Interactive Combos</a>
+        <a href="#" class="sub-link" data-tag="Obstacle Courses">Obstacle Courses</a>
+        <a href="#" class="sub-link" data-tag="Extreme Sports">Extreme Sports</a>
+        <a href="#" class="sub-link" data-tag="Inflatable Slide">Slides</a>
+        <a href="#" class="sub-link" data-tag="Dual Slide">Dual Slides</a>
+        <a href="#" class="sub-link" data-tag="Zorb Balls">Zorb Balls</a>
+        <a href="#" class="sub-link" data-tag="Inflatable Games">Inflatable Games</a>
+        <a href="#" class="sub-link" data-tag="IPS Games">IPS Games</a>
+        <a href="#" class="sub-link" data-tag="Carnival Games">Carnival Games</a>
+      </div>
+
+      <div class="sub-panel" data-panel="mechanical">
+        <a href="#" class="sub-link" data-tag="Mechanical Rides">Mechanical Rides</a>
+        <a href="#" class="sub-link" data-tag="Arcade">Arcade</a>
+      </div>
+
+      <div class="sub-panel" data-panel="entertainment">
+        <a href="#" class="sub-link" data-tag="Mascots Party Package">Mascot Parties</a>
+        <a href="#" class="sub-link" data-tag="Princesses Party Package">Princess Parties</a>
+        <a href="#" class="sub-link" data-tag="Superhero Party Package">Superhero Parties</a>
+        <a href="#" class="sub-link" data-tag="Robots Party Packages">Robot Parties</a>
+        <a href="#" class="sub-link" data-tag="Dinosaur">Dinosaur Hire</a>
+        <a href="#" class="sub-link" data-tag="Dragon">Dragon Hire</a>
+        <a href="#" class="sub-link" data-tag="Other Characters">Other Characters</a>
+        <a href="#" class="sub-link" data-tag="Costume">Costume Rental</a>
+        <a href="#" class="sub-link" data-tag="Party Artist">Party Artists</a>
+        <a href="#" class="sub-link" data-tag="Bubblegum">Bubblegum Entertainment</a>
+        <a href="#" class="sub-link" data-tag="Other Artist">Other Artists</a>
+      </div>
+
+      <div class="sub-panel" data-panel="equipment">
+        <a href="#" class="sub-link" data-tag="Snow Cone">Snow Cones</a>
+        <a href="#" class="sub-link" data-tag="Cotton Candy">Cotton Candy</a>
+        <a href="#" class="sub-link" data-tag="Popcorn">Popcorn</a>
+        <a href="#" class="sub-link" data-tag="Other Concessions">Other Concessions</a>
+        <a href="#" class="sub-link" data-tag="Power">Power & Generators</a>
+        <a href="#" class="sub-link" data-tag="Photobooth">Photo Booths</a>
+        <a href="#" class="sub-link" data-tag="Crowd">Crowd Control</a>
+        <a href="#" class="sub-link" data-tag="Equipment">Sound, Lights & Effects</a>
+        <a href="#" class="sub-link" data-tag="Screen">Movie Screens</a>
+        <a href="#" class="sub-link" data-tag="karaoke">Karaoke</a>
+      </div>
+
+      <div class="sub-panel" data-panel="tents">
+        <a href="#" class="sub-link" data-tag="Tents">Tents</a>
+      </div>
+
+      <div class="sub-panel" data-panel="decor">
+        <a href="#" class="sub-link" data-tag="Inflatable Decor">Inflatable Décor</a>
+        <a href="#" class="sub-link" data-tag="Arch">Archways</a>
+        <a href="#" class="sub-link" data-tag="Props">Props</a>
+        <a href="#" class="sub-link" data-tag="Air Dancers">Air Dancers</a>
+        <a href="#" class="sub-link" data-tag="Table">Tables</a>
+        <a href="#" class="sub-link" data-tag="Chair">Chairs</a>
+        <a href="#" class="sub-link" data-tag="Stage">Staging</a>
+        <a href="#" class="sub-link" data-tag="Furniture">Furniture</a>
+      </div>
+
+      <div class="sub-panel" data-panel="themes">
+        <a href="#" class="sub-link" data-tag="Christmas">Christmas & Winter</a>
+        <a href="#" class="sub-link" data-tag="Casino">Casino Night</a>
+        <a href="#" class="sub-link" data-tag="Princess">Princess</a>
+        <a href="#" class="sub-link" data-tag="Easter">Easter</a>
+        <a href="#" class="sub-link" data-tag="Safe Grad">Safe Grad</a>
+        <a href="#" class="sub-link" data-tag="Halloween">Halloween</a>
+        <a href="#" class="sub-link" data-tag="Movie">Movie Night</a>
+      </div>
+
     </div>
   </div>
 
