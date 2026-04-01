@@ -5,33 +5,36 @@
   const panels   = document.querySelectorAll('.sub-panel');
   const subLinks = document.querySelectorAll('.sub-link');
 
-  // Helper: apply a filter to Goodshuffle
-  function applyFilter(opts) {
+  // Helper: clear all filters
+  function clearFilters() {
     if (!gsList) return;
     gsList.removeAttribute('category');
     gsList.removeAttribute('tags');
-    if (opts.category) gsList.setAttribute('category', opts.category);
-    if (opts.tag) gsList.setAttribute('tags', opts.tag);
+  }
+
+  // Helper: apply a tag filter
+  function applyTag(tag) {
+    if (!gsList) return;
+    gsList.removeAttribute('category');
+    gsList.removeAttribute('tags');
+    if (tag) gsList.setAttribute('tags', tag);
   }
 
   // Helper: update the URL
-  function updateURL(opts) {
+  function updateURL(tag) {
     const url = new URL(window.location);
     url.searchParams.delete('category');
     url.searchParams.delete('tags');
-    if (opts.category) url.searchParams.set('category', opts.category);
-    if (opts.tag) url.searchParams.set('tags', opts.tag);
+    if (tag) url.searchParams.set('tags', tag);
     window.history.pushState({}, '', url);
   }
 
   // ── Read URL params on load ──
   const params  = new URLSearchParams(window.location.search);
   const initTag = params.get('tags') || '';
-  const initCat = params.get('category') || '';
 
-  if (gsList) {
-    if (initTag) gsList.setAttribute('tags', initTag);
-    if (initCat) gsList.setAttribute('category', initCat);
+  if (initTag && gsList) {
+    gsList.setAttribute('tags', initTag);
   }
 
   // If a tag param is present, find which panel it belongs to and open it
@@ -50,25 +53,10 @@
     });
   }
 
-  // If a category param is present, find the matching tab and activate it
-  if (initCat) {
-    catTabs.forEach(tab => {
-      if (tab.dataset.category === initCat) {
-        catTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const group = tab.dataset.group;
-        panels.forEach(p => p.classList.remove('open'));
-        const panel = document.querySelector(`.sub-panel[data-panel="${group}"]`);
-        if (panel) panel.classList.add('open');
-      }
-    });
-  }
-
   // ── Top-level tab clicks ──
   catTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const group = tab.dataset.group;
-      const category = tab.dataset.category || '';
 
       // Update active tab
       catTabs.forEach(t => t.classList.remove('active'));
@@ -80,25 +68,19 @@
       // Show/hide sub-panels
       panels.forEach(p => p.classList.remove('open'));
 
-      if (group === 'all') {
-        // Show everything
-        applyFilter({});
-        updateURL({});
-      } else {
-        // Open the sub-panel
+      // Always show all items when clicking a category tab
+      clearFilters();
+      updateURL('');
+
+      // Open the relevant sub-panel (except for "all")
+      if (group !== 'all') {
         const target = document.querySelector(`.sub-panel[data-panel="${group}"]`);
         if (target) target.classList.add('open');
-
-        if (category) {
-          // Use the Goodshuffle category slug to show all items in this group
-          applyFilter({ category: category });
-          updateURL({ category: category });
-        }
       }
     });
   });
 
-  // ── Sub-link clicks ──
+  // ── Sub-link clicks — this is where the actual filtering happens ──
   subLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -109,8 +91,8 @@
       link.classList.add('active');
 
       // Filter to this single tag
-      applyFilter({ tag: tag });
-      updateURL({ tag: tag });
+      applyTag(tag);
+      updateURL(tag);
     });
   });
 })();
