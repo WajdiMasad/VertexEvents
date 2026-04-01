@@ -43,25 +43,24 @@
     document.querySelector('.cat-tab[data-group="all"]')?.classList.add('active');
   }
 
-  // ── Category tab clicks — navigate to page with category param ──
+  // ── Category tab clicks — navigate to page with default sub-tag ──
   catTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const group    = tab.dataset.group;
-      const category = tab.dataset.category || '';
+      const group      = tab.dataset.group;
+      const defaultTag = tab.dataset.defaultTag || '';
 
       if (group === 'all') {
-        // Navigate to clean inventory page — component loads all items on page load
         window.location.href = 'inventory.html';
         return;
       }
 
-      if (category) {
-        // Navigate with category param — component picks it up cleanly on load
-        window.location.href = `inventory.html?category=${encodeURIComponent(category)}`;
+      // Navigate with the default tag for this category
+      if (defaultTag) {
+        window.location.href = `inventory.html?tags=${encodeURIComponent(defaultTag)}`;
         return;
       }
 
-      // Tabs with no category (e.g. Themes) — just toggle the sub-panel open
+      // Fallback: just open the sub-panel without filtering
       catTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       panels.forEach(p => p.classList.remove('open'));
