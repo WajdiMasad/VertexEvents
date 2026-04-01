@@ -1,25 +1,49 @@
-/* inventory.js — fix: uses category="" attribute per Goodshuffle docs */
+/* inventory.js — supports both category and tags filtering */
 (function () {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const gsList     = document.getElementById('gs-items');
+  const catLinks = document.querySelectorAll('.cat-link');
+  const gsList   = document.getElementById('gs-items');
 
-  // Apply from URL param on load
-  const initCat = new URLSearchParams(window.location.search).get('category') || '';
-  if (initCat && gsList) {
-    gsList.setAttribute('category', initCat);
-    filterBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.cat === initCat));
+  // Read URL params on load
+  const params  = new URLSearchParams(window.location.search);
+  const initCat = params.get('category') || '';
+  const initTag = params.get('tags') || '';
+
+  if (gsList) {
+    if (initCat) gsList.setAttribute('category', initCat);
+    if (initTag) gsList.setAttribute('tags', initTag);
   }
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
+  // Highlight the matching nav link on load
+  catLinks.forEach(link => {
+    const tag = link.dataset.tag;
+    if (initTag && tag === initTag) {
+      catLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    } else if (initCat && tag === initCat) {
+      catLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+
+  // Click handler for cat links
+  catLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tag = link.dataset.tag;
+
+      catLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
       if (gsList) {
-        cat ? gsList.setAttribute('category', cat) : gsList.removeAttribute('category');
+        gsList.removeAttribute('category');
+        gsList.removeAttribute('tags');
+        if (tag) gsList.setAttribute('tags', tag);
       }
+
       const url = new URL(window.location);
-      cat ? url.searchParams.set('category', cat) : url.searchParams.delete('category');
+      url.searchParams.delete('category');
+      url.searchParams.delete('tags');
+      if (tag) url.searchParams.set('tags', tag);
       window.history.pushState({}, '', url);
     });
   });

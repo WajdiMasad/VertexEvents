@@ -1,54 +1,61 @@
 /* ============================================================
-   Vertex Events — inventory.css  (v2)
+   Vertex Events — inventory.css  (v3 · Kadeema-inspired)
    ============================================================ */
 
-.inv-main {
-  padding: 56px 0 100px;
-  min-height: 50vh;
+/* ── Page Hero (compact) ── */
+.page-hero {
+  padding-top: calc(var(--nav-h) + 48px);
+  padding-bottom: 40px;
+  border-bottom: none;
+  text-align: center;
+}
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
 }
 
-/* Filter bar */
-.filter-bar {
-  position: sticky;
-  top: var(--nav-h);
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(16px);
+/* ── Category Navigation (Kadeema-style centered text links) ── */
+.cat-nav {
+  padding: 32px 0 24px;
   border-bottom: 1px solid var(--line);
-  padding: 12px 0;
 }
-
-.filter-scroll {
+.cat-nav-links {
   display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 20px;
+  line-height: 1;
 }
-.filter-scroll::-webkit-scrollbar { display: none; }
-
-.filter-btn {
-  flex-shrink: 0;
-  padding: 8px 18px;
-  border-radius: 4px;
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--text-2);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  cursor: pointer;
+.cat-link {
   font-family: var(--font-sans);
-  transition: all 0.15s;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  padding: 6px 4px;
+  transition: color 0.2s;
   white-space: nowrap;
+  text-decoration: none;
 }
-.filter-btn:hover {
+.cat-link:hover {
   color: var(--text-1);
-  border-color: var(--line-2);
 }
-.filter-btn.active {
-  background: var(--blue);
-  color: #fff;
-  border-color: transparent;
+.cat-link.active {
+  color: var(--blue-3);
+}
+
+/* ── Inventory Main ── */
+.inv-main {
+  padding: 40px 0 100px;
+  min-height: 60vh;
+}
+
+/* ── Goodshuffle Grid Override — 5 columns, borderless, Kadeema-style ── */
+
+/* Grid container */
+gspro-item-list {
+  --gspro-primary-color: var(--blue);
+  display: block;
 }
 
 /* CTA */
@@ -56,4 +63,19 @@
   margin-top: 64px;
   padding-top: 56px;
   border-top: 1px solid var(--line);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cat-nav-links {
+    gap: 2px 14px;
+  }
+  .cat-link {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+  .page-hero {
+    padding-top: calc(var(--nav-h) + 32px);
+    padding-bottom: 24px;
+  }
 }
