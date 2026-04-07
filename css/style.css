@@ -234,6 +234,20 @@ section.dense { padding: 80px 0; }
 .nav-links a:hover,
 .nav-links a.active { color: var(--text-1); }
 
+/* Home page transparent nav overrides */
+.is-home .navbar:not(.scrolled) .nav-wordmark,
+.is-home .navbar:not(.scrolled) .nav-links a,
+.is-home .navbar:not(.scrolled) .nav-hamburger span {
+  color: #ffffff;
+  background-color: transparent;
+}
+.is-home .navbar:not(.scrolled) .nav-hamburger span {
+  background-color: #ffffff;
+}
+.is-home .navbar:not(.scrolled) .nav-links a:hover {
+  color: var(--accent);
+}
+
 .nav-right {
   display: flex;
   align-items: center;
