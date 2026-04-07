@@ -57,9 +57,9 @@
   background: var(--bg-2);
 }
 .cat-tab.active {
-  background: var(--blue);
+  background: var(--accent);
   color: #fff;
-  border-color: var(--blue);
+  border-color: var(--accent);
 }
 
 /* Sub-category panels — hidden by default */
@@ -98,8 +98,8 @@
   background: var(--bg-2);
 }
 .sub-link.active {
-  color: var(--blue-3);
-  background: var(--blue-dim);
+  color: var(--accent);
+  background: var(--accent-dim);
 }
 
 /* ── Inventory Main ── */
@@ -110,7 +110,7 @@
 
 /* ── Goodshuffle ── */
 gspro-item-list {
-  --gspro-primary-color: var(--blue);
+  --gspro-primary-color: var(--accent);
   display: block;
 }
 

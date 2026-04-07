@@ -84,8 +84,8 @@ function initScrollReveals() {
     });
   }
 
-  // Standard Fade-ups
-  const fadeEls = document.querySelectorAll('.fade-up');
+  // Standard Fade-ups (Filtered out the offer-asym-cards for custom stagger)
+  const fadeEls = document.querySelectorAll('.fade-up:not(.offer-asym-card)');
   fadeEls.forEach(el => {
     let delay = 0;
     if (el.classList.contains('delay-1')) delay = 0.1;
@@ -109,8 +109,21 @@ function initScrollReveals() {
     );
   });
 
+  // Dynamic Stagger for Asymmetrical Grid Cards
+  const asymCards = document.querySelectorAll('.offer-asym-card');
+  if (asymCards.length) {
+    ScrollTrigger.batch(asymCards, {
+      start: "top 85%",
+      onEnter: batch => gsap.fromTo(batch, 
+        { opacity: 0, y: 100, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, stagger: 0.15, duration: 1.2, ease: "expo.out" }
+      ),
+      onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 100, scale: 0.95 })
+    });
+  }
+
   // Parallax Images
-  document.querySelectorAll('.svc-row-img img, .hero-img').forEach(img => {
+  document.querySelectorAll('.svc-row-img img, .hero-img, .offer-img-layer img').forEach(img => {
     gsap.fromTo(img, 
       { yPercent: -10 },
       {

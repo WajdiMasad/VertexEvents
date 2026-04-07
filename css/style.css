@@ -114,7 +114,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   text-transform: uppercase;
   color: var(--text-2);
 }
-.label-blue { color: var(--blue-3); }
+.label-blue { color: var(--accent); }
 
 /* ── Layout ── */
 .container {
@@ -214,7 +214,7 @@ section.dense { padding: 80px 0; }
   letter-spacing: -0.01em;
   color: var(--text-1);
 }
-.nav-wordmark span { color: var(--blue-3); }
+.nav-wordmark span { color: var(--accent); }
 
 .nav-links {
   display: flex;
@@ -274,7 +274,7 @@ section.dense { padding: 80px 0; }
   transition: background 0.2s;
   flex-shrink: 0;
 }
-[data-theme="dark"] .theme-toggle-track { background: var(--blue); }
+[data-theme="dark"] .theme-toggle-track { background: var(--accent); }
 .theme-toggle-thumb {
   position: absolute;
   width: 12px; height: 12px;
@@ -335,7 +335,7 @@ section.dense { padding: 80px 0; }
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--blue-3);
+  color: var(--accent);
   margin-bottom: 20px;
 }
 .page-hero h1 {
@@ -606,7 +606,7 @@ gspro-item-card .gspro-o-button--icon:hover::after {
 .cursor {
   width: 8px;
   height: 8px;
-  background-color: var(--blue);
+  background-color: var(--accent);
   transform: translate(-50%, -50%);
   transition: opacity 0.3s;
 }
@@ -614,7 +614,7 @@ gspro-item-card .gspro-o-button--icon:hover::after {
 .cursor-follower {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--accent);
   transform: translate(-50%, -50%);
   transition: opacity 0.3s, transform 0.1s ease-out, width 0.2s, height 0.2s, border-color 0.2s, background-color 0.2s;
 }
@@ -622,12 +622,12 @@ gspro-item-card .gspro-o-button--icon:hover::after {
 .cursor-follower.active {
   width: 60px;
   height: 60px;
-  background-color: var(--blue-dim);
+  background-color: var(--accent-dim);
   border-color: transparent;
 }
 .cursor-follower.magnetic {
   border-color: transparent;
-  background-color: var(--blue-glow);
+  background-color: var(--accent-dim);
 }
 
 /* Preloader (Home Only) */
@@ -650,5 +650,5 @@ gspro-item-card .gspro-o-button--icon:hover::after {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .p-vertex { display: inline-block; transform: translateY(100%); opacity: 0; }
-.p-events { display: inline-block; color: var(--blue-3); transform: translateY(100%); opacity: 0; }
+.p-events { display: inline-block; color: var(--accent); transform: translateY(100%); opacity: 0; }
 

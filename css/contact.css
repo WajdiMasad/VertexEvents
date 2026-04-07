@@ -45,7 +45,7 @@
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--blue);
+  border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(35,87,217,0.12);
 }
 .form-group select option { background: var(--bg-3); color: var(--text-1); }

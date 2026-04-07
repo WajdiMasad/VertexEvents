@@ -113,7 +113,7 @@
 }
 .stat-n sup {
   font-size: 0.9rem;
-  color: var(--blue-3);
+  color: var(--accent);
 }
 .stat-l { color: var(--text-3); }
 .stat-div {
@@ -146,7 +146,7 @@
   text-transform: uppercase;
   color: var(--text-2);
 }
-.marquee-track .dot { color: var(--blue-3); }
+.marquee-track .dot { color: var(--accent); }
 
 @keyframes marquee {
   0%   { transform: translateX(0); }
@@ -313,15 +313,15 @@
 }
 .phil-quote {
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--text-1);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--midnight);
   border: none;
   font-style: normal;
 }
-.phil-quote em { font-style: italic; color: var(--blue-3); }
+.phil-quote em { font-style: italic; color: var(--accent); }
 .phil-right p { color: var(--text-2); line-height: 1.7; margin-bottom: 28px; }
 
 .phil-points { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
@@ -335,7 +335,7 @@
 .phil-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--blue);
+  background: var(--accent);
   flex-shrink: 0;
 }
 
@@ -376,8 +376,8 @@
   transition: color 0.15s;
 }
 .more-c { color: var(--text-3); flex-shrink: 0; }
-.more-item--all .more-name { color: var(--blue-3); }
-.more-item--all svg { color: var(--blue-3); }
+.more-item--all .more-name { color: var(--accent); }
+.more-item--all svg { color: var(--accent); }
 
 /* ── CTA Section ── */
 .cta-section {
