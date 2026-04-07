@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Vertex Events</title>
+  <meta name="description" content="View our portfolio of unforgettable events, from large-scale festivals to elegant corporate galas." />
+
+  <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.js"></script>
+  <gspro-wishlist-config data-url="https://data.goodshuffle.com/vendor/Onv97vozQ68q0Iimwx7LZRZBMHp6ah"></gspro-wishlist-config>
+
+  <!-- Animation & Layout Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
+  <!-- GLightbox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+
+  <!-- Premium UX Overlays -->
+  <div class="noise"></div>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-wordmark">Vertex <span>Events</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html?tags=Basic+Bouncer">Browse Rentals</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-toggle-icon">☀️</span>
+          <div class="theme-toggle-track"><div class="theme-toggle-thumb"></div></div>
+        </button>
+        <gspro-wishlist-button></gspro-wishlist-button>
+        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <a href="index.html">Home</a>
+    <a href="inventory.html?tags=Basic+Bouncer">Browse Rentals</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Get a Quote</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="page-hero-label">Our Portfolio</p>
+      <h1>A Gallery of<br /><em style="font-style:italic;color:var(--accent);">Unforgettable Experiences.</em></h1>
+      <p>A look at the scale, quality, and breathtaking aesthetics of the events we proudly produce year round.</p>
+    </div>
+  </div>
+
+  <main class="gallery-main">
+    <div class="container">
+      
+      <!-- Event Block 1 -->
+      <section class="gallery-event">
+        <div class="gallery-event-header fade-up">
+          <p class="section-label">Outdoor Festivals</p>
+          <h2 class="section-title">Halifax Waterfront Mainstage</h2>
+          <p class="gallery-event-desc">We supplied full-scale production including 40x80 frame tents, truss structures, VIP lounge furniture, and complete atmospheric lighting for a multi-day waterfront festival spanning hundreds of attendees.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <a href="https://images.unsplash.com/photo-1540039155732-68c35b00c3b5?w=1920&q=80" class="gallery-item glightbox fade-up delay-1" data-gallery="festival">
+            <img src="https://images.unsplash.com/photo-1540039155732-68c35b00c3b5?w=800&q=80" alt="Concert Stage" />
+            <div class="gallery-hover"><span>View Image</span></div>
+          </a>
+          <a href="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1920&q=80" class="gallery-item glightbox fade-up delay-2" style="grid-row: span 2;" data-gallery="festival">
+            <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80" alt="Crowd" />
+            <div class="gallery-hover"><span>View Image</span></div>
+          </a>
+          <a href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=80" class="gallery-item glightbox fade-up delay-3" style="grid-column: span 2;" data-gallery="festival">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80" alt="Live Band" />
+            <div class="gallery-hover"><span>View Image</span></div>
+          </a>
+          <a href="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1920&q=80" class="gallery-item glightbox fade-up delay-1" data-gallery="festival">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80" alt="Stage Lights" />
+            <div class="gallery-hover"><span>View Image</span></div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Event Block 2 -->
+      <section class="gallery-event" style="margin-top: 120px;">
+        <div class="gallery-event-header fade-up">
+          <p class="section-label">Gala & Corporate</p>
+          <h2 class="section-title">Annual Tech Summit Gala</h2>
+          <p class="gallery-event-desc">A premium indoor setup featuring elegant velvet seating, gold accents, champagne towers, and atmospheric uplighting designed to impress high-value executives.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <a href="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80" class="gallery-item glightbox fade-up delay-1" style="grid-column: span 2;" data-gallery="gala">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80" alt="Venue Setup" />
+            <div class="gallery-hover"><span>View Image</span></div>
+          </a>
+          <a href="https://images.unsplash.com/photo-1561912774-79769a0a0a7a?w=1920&q=80" class="gallery-item glightbox fade-up delay-2" data-gallery="gala">
+            <img src="https://images.unsplash.com/photo-1561912774-79769a0a0a7a?w=800&q=80" alt="Decor Elements" />
+            <div class="gallery-hover"><span>View Image</span></div>
+          </a>
+          <a href="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80" class="gallery-item glightbox fade-up delay-1" data-gallery="gala">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80" alt="Gala Tables" />
+            <div class="gallery-hover"><span>View Image</span></div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section style="background:var(--bg-2);border-top:1px solid var(--line);margin-top:120px;">
+    <div class="container">
+      <div class="svc-cta fade-up">
+        <p class="section-label" style="color:var(--accent);">Ready to build your event?</p>
+        <h2 class="section-title">Bring your vision to life.</h2>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px;">
+          <a href="inventory.html?tags=Basic+Bouncer" class="btn btn-primary">Browse Full Inventory</a>
+          <a href="contact.html" class="btn btn-outline">Get a Custom Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-wordmark">Vertex<span>Events</span></a>
+          <p>Halifax's premier event rental company. From inflatables to full event production.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="index.html">Home</a>
+          <a href="inventory.html?tags=Basic+Bouncer">Browse Rentals</a>
+          <a href="services.html">Services</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Top Categories</h5>
+          <a href="inventory.html?category=inflatables-rentals">Inflatables</a>
+          <a href="inventory.html?category=entertainment-games-rentals">Games</a>
+          <a href="inventory.html?category=decor-rentals">Décor</a>
+          <a href="inventory.html?category=tent-canopy-rentals">Tents</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="tel:+19025551234">(902) 555-1234</a>
+          <a href="mailto:hello@vertexevents.ca">hello@vertexevents.ca</a>
+          <a href="#">Halifax, Nova Scotia</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Vertex Events. All rights reserved.</span>
+        <span>Inventory powered by <a href="https://pro.goodshuffle.com">Goodshuffle Pro</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- GLightbox Script Initialization -->
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true,
+        zoomable: true
+      });
+    });
+  </script>
+</body>
+</html>
