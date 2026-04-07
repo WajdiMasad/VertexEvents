@@ -16,10 +16,10 @@
   --text-2:     #4A5059; /* Slate */
   --text-3:     #8C939D; /* Light Slate */
 
-  --midnight:   #061324;
-  --midnight-2: #0F2038;
-  --accent:     #B5A27A; /* Muted Champagne Gold */
-  --accent-dim: rgba(181, 162, 122, 0.15);
+  --midnight:   #1A2530; /* We keep a dark base for text contrasts if needed */
+  --midnight-2: #111A22;
+  --accent:     #2357D9; /* Royal Blue */
+  --accent-dim: rgba(35,87,217,0.15);
   
   --line:       rgba(17, 20, 24, 0.08);
   --line-2:     rgba(17, 20, 24, 0.15);
@@ -148,18 +148,18 @@ section.dense { padding: 80px 0; }
   overflow: hidden;
 }
 .btn-primary {
-  background: var(--midnight);
+  background: var(--accent);
   color: #fff;
-  border: 1px solid var(--midnight);
+  border: 1px solid var(--accent);
 }
 .btn-primary:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--midnight);
+  border-color: var(--midnight);
   color: #fff;
 }
 .btn-outline {
   background: transparent;
-  color: var(--midnight);
+  color: var(--accent);
   border: 1px solid var(--line-3);
 }
 .btn-outline:hover {
@@ -450,38 +450,38 @@ footer {
 /* ── Goodshuffle overrides ── */
 gspro-item-list,
 gspro-wishlist {
-  --gspro-primary-color: var(--midnight);
+  --gspro-primary-color: var(--accent);
   display: block;
 }
 
-/* Item card — midnight blue, no border, white text */
+/* Item card — royal blue, no border, white text */
 gspro-item-card,
 gspro-item-card.gspro-c-item-card,
 gspro-item-card.hydrated {
-  background-color: var(--bg-1) !important;
-  border-color: var(--line) !important;
-  color: var(--text-1) !important;
-  border-radius: 0 !important; /* Luxury sharp edges */
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+  border-radius: 0 !important;
 }
 gspro-item-card *:not(img) {
-  color: var(--text-2) !important;
+  color: #fff !important;
 }
 gspro-item-card h1, gspro-item-card h2, gspro-item-card h3 {
   font-family: var(--font-serif) !important;
-  color: var(--midnight) !important;
+  color: #fff !important;
 }
 
-/* Wishlist button — white bg, midnight + icon */
+/* Wishlist button — white bg, blue + icon */
 gspro-wishlist-button,
 gspro-wishlist-button .gspro-o-button,
 gspro-wishlist-button .gspro-o-button--icon,
 gspro-wishlist-button button,
 .gspro-c-wishlist__trigger {
-  background-color: var(--midnight) !important;
-  border: 1px solid var(--midnight) !important;
-  border-radius: 0 !important; 
-  color: #fff !important;
-  box-shadow: none !important;
+  background-color: #fff !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 50% !important;
+  color: var(--accent) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -500,10 +500,10 @@ gspro-wishlist-button button::after,
 .gspro-c-wishlist__trigger::after {
   content: '+' !important;
   font-size: 24px !important;
+  font-weight: 700 !important;
   font-family: var(--font-sans) !important;
-  font-weight: 300 !important;
   line-height: 1 !important;
-  color: #fff !important;
+  color: var(--accent) !important;
   display: block !important;
   text-align: center !important;
 }
@@ -511,19 +511,17 @@ gspro-wishlist-button button::after,
 /* Per-item add/wishlist buttons on cards */
 .gspro-o-button--icon,
 gspro-item-card .gspro-o-button--icon {
-  background-color: transparent !important;
-  border: 1px solid var(--line-3) !important;
+  background-color: #fff !important;
+  border: none !important;
   border-radius: 50% !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  box-shadow: none !important;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
 }
 .gspro-o-button--icon:hover,
 gspro-item-card .gspro-o-button--icon:hover {
   background-color: var(--midnight) !important;
-  border-color: var(--midnight) !important;
 }
 .gspro-o-button--icon svg,
 gspro-item-card .gspro-o-button--icon svg {
@@ -533,12 +531,11 @@ gspro-item-card .gspro-o-button--icon svg {
 gspro-item-card .gspro-o-button--icon::after {
   content: '+' !important;
   font-size: 20px !important;
-  font-weight: 300 !important;
+  font-weight: 700 !important;
   line-height: 1 !important;
-  color: var(--midnight) !important;
+  color: var(--accent) !important;
   display: block !important;
   text-align: center !important;
-  transition: color 0.3s ease;
 }
 .gspro-o-button--icon:hover::after,
 gspro-item-card .gspro-o-button--icon:hover::after {
