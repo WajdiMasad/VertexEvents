@@ -262,71 +262,53 @@
   </section>
 
   <!-- ══ MORE CATEGORIES ══ -->
-  <section class="more-section">
+  <section class="more-section" style="padding: 120px 0; background: var(--bg-1);">
     <div class="container">
-      <div class="more-header fade-up">
-        <p class="section-label">Also Available</p>
-        <h2 class="section-title">More to explore</h2>
+      <div class="more-header fade-up" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px;">
+        <div>
+          <p class="section-label">Also Available</p>
+          <h2 class="section-title" style="margin-bottom: 0;">More to explore.</h2>
+        </div>
+        <a href="inventory.html" class="btn btn-outline" style="margin-bottom: 8px;">View All Categories</a>
       </div>
-      <div class="more-grid">
-        <a href="inventory.html?category=photo-booth-rentals" class="more-item fade-up">
-          <span class="more-n label">07</span>
-          <span class="more-name">Photo Booths</span>
-          <span class="more-c label">7 items</span>
+      
+      <div class="more-premium-grid">
+        <a href="inventory.html?category=photo-booth-rentals" class="more-premium-card fade-up">
+          <div class="mp-icon">📸</div>
+          <h3>Photo Booths</h3>
+          <span class="mp-count">7 items</span>
         </a>
-        <a href="inventory.html?category=lighting-decor-rentals" class="more-item fade-up delay-1">
-          <span class="more-n label">08</span>
-          <span class="more-name">Lighting & Marquee</span>
-          <span class="more-c label">23 items</span>
+        <a href="inventory.html?category=lighting-decor-rentals" class="more-premium-card fade-up delay-1">
+          <div class="mp-icon">✨</div>
+          <h3>Lighting & Marquee</h3>
+          <span class="mp-count">23 items</span>
         </a>
-        <a href="inventory.html?category=pro-audio-rentals" class="more-item fade-up delay-2">
-          <span class="more-n label">09</span>
-          <span class="more-name">Pro Audio</span>
-          <span class="more-c label">9 items</span>
+        <a href="inventory.html?category=pro-audio-rentals" class="more-premium-card fade-up delay-2">
+          <div class="mp-icon">🔊</div>
+          <h3>Pro Audio</h3>
+          <span class="mp-count">9 items</span>
         </a>
-        <a href="inventory.html?category=pro-video-rentals" class="more-item fade-up delay-3">
-          <span class="more-n label">10</span>
-          <span class="more-name">Pro Video</span>
-          <span class="more-c label">11 items</span>
-        </a>
-        <a href="inventory.html?category=visual-effect-rentals" class="more-item fade-up">
-          <span class="more-n label">11</span>
-          <span class="more-name">Visual Effects</span>
-          <span class="more-c label">10 items</span>
-        </a>
-        <a href="inventory.html?category=furniture-rentals" class="more-item fade-up delay-1">
-          <span class="more-n label">12</span>
-          <span class="more-name">Furniture & Lounge</span>
-          <span class="more-c label">31 items</span>
-        </a>
-        <a href="inventory.html?category=power-rentals" class="more-item fade-up delay-2">
-          <span class="more-n label">13</span>
-          <span class="more-name">Power & Generators</span>
-          <span class="more-c label">11 items</span>
-        </a>
-        <a href="inventory.html" class="more-item more-item--all fade-up delay-3">
-          <span class="more-n label">+</span>
-          <span class="more-name">View All Categories</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="inventory.html?category=furniture-rentals" class="more-premium-card fade-up delay-3">
+          <div class="mp-icon">🪑</div>
+          <h3>Furniture & Lounge</h3>
+          <span class="mp-count">31 items</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ══ CTA ══ -->
-  <section class="cta-section">
-    <div class="cta-bg">
-      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=75&auto=format&fit=crop" alt="Event" class="cta-img" />
-      <div class="cta-overlay"></div>
-    </div>
-    <div class="container cta-body">
-      <p class="section-label label-blue fade-up">Ready When You Are</p>
-      <h2 class="display-lg fade-up delay-1">
-        Let's make your<br />next event unforgettable.
-      </h2>
-      <div class="cta-actions fade-up delay-2">
-        <a href="inventory.html" class="btn btn-primary">Browse Inventory</a>
-        <a href="contact.html" class="btn btn-outline">Talk to Us</a>
+  <!-- ══ MIDNIGHT NAVY CTA ══ -->
+  <section class="premium-cta">
+    <div class="container">
+      <div class="premium-cta-inner fade-up">
+        <p class="section-label" style="color: var(--accent);">Ready When You Are</p>
+        <h2 class="display-lg">
+          Let's make your next<br />event unforgettable.
+        </h2>
+        <div class="cta-actions" style="margin-top: 48px;">
+          <a href="inventory.html?tags=Basic+Bouncer" class="btn btn-primary">Browse Full Catalog</a>
+          <a href="contact.html" class="btn" style="background:#ffffff; color:#111a22; border-color:#ffffff;">Request a Quote</a>
+        </div>
       </div>
     </div>
   </section>

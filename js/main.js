@@ -123,7 +123,7 @@ function initScrollReveals() {
   }
 
   // Parallax Images
-  document.querySelectorAll('.svc-row-img img, .hero-img, .offer-img-layer img').forEach(img => {
+  document.querySelectorAll('.svc-img-layer img, .hero-img, .offer-img-layer img').forEach(img => {
     gsap.fromTo(img, 
       { yPercent: -10 },
       {

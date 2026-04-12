@@ -1,101 +1,209 @@
 /* ============================================================
-   Vertex Events — contact.css  (v2)
+   Vertex Events — contact.css
+   Split-Screen Premium Layout
    ============================================================ */
 
-.contact-main { padding: 72px 0 100px; }
-
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 64px;
-  align-items: start;
+body.contact-page {
+  background: var(--bg-1);
 }
 
-/* Form */
-.contact-form { display: flex; flex-direction: column; gap: 20px; }
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-.form-group { display: flex; flex-direction: column; gap: 7px; }
-
-.form-group label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--text-2);
-  text-transform: uppercase;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  background: var(--bg-2);
-  border: 1px solid var(--line-2);
-  border-radius: var(--r-sm);
-  padding: 12px 16px;
-  color: var(--text-1);
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
+.contact-split {
+  display: flex;
+  min-height: 100vh; /* Full viewport height */
   width: 100%;
 }
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: var(--text-3); }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(35,87,217,0.12);
-}
-.form-group select option { background: var(--bg-3); color: var(--text-1); }
-.form-group textarea { resize: vertical; min-height: 130px; }
 
-.submit-btn { width: 100%; justify-content: center; padding: 15px; font-size: 0.9rem; }
+/* ── Left Visual Panel ── */
+.contact-visual {
+  position: relative;
+  width: 45%;
+  background: var(--midnight);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px;
+  overflow: hidden;
+}
+
+.contact-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.contact-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(17,26,34,0.3) 0%, rgba(17,26,34,0.9) 100%);
+  z-index: 2;
+}
+
+.cv-content {
+  position: relative;
+  z-index: 3;
+}
+
+.cv-content .display-xl {
+  margin-bottom: 64px;
+}
+
+.cv-info {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 40px;
+}
+
+.cv-info .label {
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cv-info p {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+/* ── Right Form Panel ── */
+.contact-form-side {
+  width: 55%;
+  background: var(--bg-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 80px;
+  overflow-y: auto;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.premium-form .form-group {
+  margin-bottom: 24px;
+}
+.premium-form .form-row .form-group {
+  margin-bottom: 0;
+}
+
+/* Floating Label Inputs */
+.float-label {
+  position: relative;
+  border-bottom: 2px solid var(--line);
+  padding-top: 16px; /* Space for label to float up */
+  transition: border-color 0.3s;
+}
+
+.float-label:focus-within {
+  border-color: var(--accent);
+}
+
+.float-label input,
+.float-label select,
+.float-label textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--text-1);
+  padding: 8px 0;
+  outline: none;
+}
+
+.float-label select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.float-label label {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  font-size: 1.05rem;
+  color: var(--text-3);
+  pointer-events: none;
+  transition: all 0.25s var(--ease-out);
+}
+
+/* Trigger Float when Focused OR not placeholder-shown (Meaning it has a value) */
+.float-label input:focus ~ label,
+.float-label input:not(:placeholder-shown) ~ label,
+.float-label textarea:focus ~ label,
+.float-label textarea:not(:placeholder-shown) ~ label,
+.float-label select:focus ~ label,
+.float-label select:valid ~ label {
+  top: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Special fix for select: It doesn't have placeholder-shown, so rely on requiring selection */
+.float-label select:invalid ~ label {
+  top: 24px;
+  font-size: 1.05rem;
+  color: var(--text-3);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.form-wishlist-status {
+  background: var(--bg-2);
+  padding: 24px;
+  border-radius: var(--r-md);
+  margin-top: 32px;
+}
 
 .form-success {
   display: none;
-  align-items: center;
-  gap: 14px;
-  background: rgba(74,222,128,0.07);
-  border: 1px solid rgba(74,222,128,0.25);
-  border-radius: var(--r-sm);
-  padding: 16px 20px;
-}
-.form-success.show { display: flex; }
-.form-success strong { display: block; font-size: 0.9rem; color: #4ade80; margin-bottom: 2px; }
-.form-success p { font-size: 0.82rem; color: var(--text-2); margin: 0; }
-
-/* Sidebar */
-.sidebar-section { margin-bottom: 40px; }
-.sidebar-section .section-label { margin-bottom: 16px; }
-
-.info-list { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
-.info-row {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--line);
-  transition: background 0.15s;
-}
-.info-row:last-child { border-bottom: none; }
-a.info-row:hover { background: var(--bg-3); }
-.info-label { color: var(--text-3); margin-bottom: 2px; }
-.info-val { font-size: 0.9rem; color: var(--text-1); }
-
-.sidebar-tip {
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-  border-radius: var(--r-md);
+  align-items: flex-start;
+  gap: 16px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
   padding: 24px;
+  border-radius: var(--r-md);
+  margin-top: 32px;
 }
-.sidebar-tip p { font-size: 0.88rem; color: var(--text-2); line-height: 1.6; }
+.form-success.show {
+  display: flex;
+}
+.form-success strong {
+  display: block;
+  color: #166534;
+  margin-bottom: 4px;
+}
+.form-success p {
+  color: #15803d;
+  font-size: 0.95rem;
+}
 
-/* Responsive */
-@media (max-width: 900px) {
-  .contact-layout { grid-template-columns: 1fr; }
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .contact-split { flex-direction: column; }
+  .contact-visual { width: 100%; height: 60vh; min-height: 500px; padding: 40px; }
+  .contact-form-side { width: 100%; padding: 80px 40px; }
+  .cv-info { flex-direction: column; gap: 24px; }
 }
-@media (max-width: 600px) {
-  .form-row { grid-template-columns: 1fr; }
+
+@media (max-width: 768px) {
+  .form-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+  .premium-form .form-row .form-group { margin-bottom: 24px; }
+  .cv-content .display-xl { font-size: 2.8rem; }
 }
