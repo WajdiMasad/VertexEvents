@@ -525,12 +525,11 @@ gspro-wishlist-button button::after,
 /* Per-item add/wishlist buttons on cards */
 .gspro-o-button--icon,
 gspro-item-card .gspro-o-button--icon {
+  position: relative !important;
   background-color: #fff !important;
   border: none !important;
   border-radius: 50% !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: inline-block !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
 }
 .gspro-o-button--icon:hover,
@@ -543,13 +542,16 @@ gspro-item-card .gspro-o-button--icon svg {
 }
 .gspro-o-button--icon::after,
 gspro-item-card .gspro-o-button--icon::after {
+  position: absolute !important;
   content: '+' !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
   font-size: 20px !important;
   font-weight: 700 !important;
   line-height: 1 !important;
   color: var(--accent) !important;
   display: block !important;
-  text-align: center !important;
 }
 .gspro-o-button--icon:hover::after,
 gspro-item-card .gspro-o-button--icon:hover::after {
