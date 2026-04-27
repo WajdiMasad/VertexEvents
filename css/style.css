@@ -499,6 +499,7 @@ gspro-wishlist-button button,
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  padding: 0 !important;
 }
 /* Hide the default heart icon/svg */
 gspro-wishlist-button svg,
@@ -520,6 +521,8 @@ gspro-wishlist-button button::after,
   color: var(--accent) !important;
   display: block !important;
   text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Per-item add/wishlist buttons on cards */
