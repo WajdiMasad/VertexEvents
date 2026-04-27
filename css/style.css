@@ -523,8 +523,8 @@ gspro-wishlist-button button::after,
 }
 
 /* Per-item add/wishlist buttons on cards */
-.gspro-o-button--icon,
-gspro-item-card .gspro-o-button--icon {
+.gspro-c-item-card__add .gspro-o-button--icon,
+gspro-item-card .gspro-c-item-card__add .gspro-o-button--icon {
   position: relative !important;
   background-color: #fff !important;
   border: none !important;
@@ -532,16 +532,16 @@ gspro-item-card .gspro-o-button--icon {
   display: inline-block !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
 }
-.gspro-o-button--icon:hover,
-gspro-item-card .gspro-o-button--icon:hover {
+.gspro-c-item-card__add .gspro-o-button--icon:hover,
+gspro-item-card .gspro-c-item-card__add .gspro-o-button--icon:hover {
   background-color: var(--midnight) !important;
 }
-.gspro-o-button--icon svg,
-gspro-item-card .gspro-o-button--icon svg {
+.gspro-c-item-card__add .gspro-o-button--icon svg,
+gspro-item-card .gspro-c-item-card__add .gspro-o-button--icon svg {
   display: none !important;
 }
-.gspro-o-button--icon::after,
-gspro-item-card .gspro-o-button--icon::after {
+.gspro-c-item-card__add .gspro-o-button--icon::after,
+gspro-item-card .gspro-c-item-card__add .gspro-o-button--icon::after {
   position: absolute !important;
   content: '+' !important;
   top: 50% !important;
@@ -553,8 +553,8 @@ gspro-item-card .gspro-o-button--icon::after {
   color: var(--accent) !important;
   display: block !important;
 }
-.gspro-o-button--icon:hover::after,
-gspro-item-card .gspro-o-button--icon:hover::after {
+.gspro-c-item-card__add .gspro-o-button--icon:hover::after,
+gspro-item-card .gspro-c-item-card__add .gspro-o-button--icon:hover::after {
   color: #fff !important;
 }
 
