@@ -10,340 +10,145 @@
   <script nomodule src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.js"></script>
   <gspro-wishlist-config data-url="https://data.goodshuffle.com/vendor/Onv97vozQ68q0Iimwx7LZRZBMHp6ah"></gspro-wishlist-config>
 
-  <!-- Animation Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-  <script src="https://unpkg.com/split-type"></script>
-
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
 </head>
-<body class="is-home">
-
-  <!-- Premium UX Overlays -->
-  <div class="noise"></div>
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
-
-  <!-- Preloader (Home Only) -->
-  <div class="preloader">
-    <div class="preloader-brand">
-      <span class="p-vertex">Vertex</span><span class="p-events">Events</span>
-    </div>
-  </div>
+<body class="is-home-generic">
 
   <!-- Nav -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-wordmark">Vertex <span>Events</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="inventory.html?tags=Basic%20Bouncer">Browse Rentals</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <nav class="navbar" id="navbar" style="position: sticky; top: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;">
+    <div class="nav-inner" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 20px;">
+      <a href="index.html" class="nav-wordmark" style="color: #111;">Vertex <span style="color: #0b318f;">Events</span></a>
+      <ul class="nav-links" style="display: flex; gap: 24px; list-style: none; margin: 0; padding: 0;">
+        <li><a href="index.html" class="active" style="color: #0b318f; font-weight: 600; text-decoration: none;">Home</a></li>
+        <li><a href="inventory.html?tags=Basic%20Bouncer" style="color: #333; text-decoration: none;">Browse Rentals</a></li>
+        <li><a href="gallery.html" style="color: #333; text-decoration: none;">Gallery</a></li>
+        <li><a href="contact.html" style="color: #333; text-decoration: none;">Contact</a></li>
       </ul>
-      <div class="nav-right">
-        <button class="theme-toggle" aria-label="Toggle theme">
-          <span class="theme-toggle-icon">☀️</span>
-          <div class="theme-toggle-track"><div class="theme-toggle-thumb"></div></div>
-        </button>
+      <div class="nav-right" style="display: flex; align-items: center; gap: 16px;">
         <gspro-wishlist-button></gspro-wishlist-button>
-        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+        <a href="contact.html" class="btn btn-primary" style="background: #e62b1e; color: #fff; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 700;">Get a Quote</a>
       </div>
-      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobile-menu">
-    <button class="mobile-close" id="mobile-close">✕</button>
-    <a href="index.html">Home</a>
-    <a href="inventory.html?tags=Basic%20Bouncer">Browse Rentals</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-    <a href="contact.html" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Get a Quote</a>
-  </div>
-
-  <!-- ══ HERO ══ -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img
-        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1920&q=80&auto=format&fit=crop"
-        alt="Elegant outdoor event setup with string lights"
-        class="hero-img"
-      />
-      <div class="hero-overlay"></div>
-    </div>
-
-    <div class="container hero-body">
-      <p class="hero-location label fade-up">Elevated Aesthetics · Haliax, NS</p>
-      <h1 class="display-xl fade-up delay-1">
-        Curated Rentals.<br />
-        <span class="hero-accent">Unforgettable Events.</span>
-      </h1>
-      <p class="hero-sub fade-up delay-2">
-        Full-service event production and premium rentals. We don't just supply equipment — we engineer breathtaking experiences from concept to teardown.
-      </p>
-      <div class="hero-actions fade-up delay-3">
-        <a href="inventory.html?tags=Basic%20Bouncer" class="btn btn-primary">
-          Explore Collection
-        </a>
-        <a href="contact.html" class="btn btn-text">
-          Request a Consultation
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+  <!-- Hero Image Slider -->
+  <header class="hero-slider" id="hero-slider">
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <img src="images/services/tents.png" alt="Tent Rentals" class="slide-bg" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h1>Halifax's Premier Event Rentals</h1>
+        <p>Tents, staging, and production for massive corporate and private events.</p>
+        <a href="inventory.html?category=tent-canopy-rentals" class="slide-btn">View Tents</a>
       </div>
     </div>
-
-    <!-- Stats bar -->
-    <div class="hero-stats">
-      <div class="container">
-        <div class="stats-inner">
-          <div class="stat">
-            <span class="stat-n">670<sup>+</sup></span>
-            <span class="stat-l label">Rental Items</span>
-          </div>
-          <div class="stat-div"></div>
-          <div class="stat">
-            <span class="stat-n">20<sup>+</sup></span>
-            <span class="stat-l label">Categories</span>
-          </div>
-          <div class="stat-div"></div>
-          <div class="stat">
-            <span class="stat-n">100<sup>+</sup></span>
-            <span class="stat-l label">Entertainment Services</span>
-          </div>
-          <div class="stat-div"></div>
-          <div class="stat">
-            <span class="stat-n">5<sup>★</sup></span>
-            <span class="stat-l label">Rated Service</span>
-          </div>
-        </div>
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="images/services/inflatables.png" alt="Inflatables" class="slide-bg" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h1>Massive Inflatable Inventory</h1>
+        <p>From bounce houses to 100ft obstacle courses, we bring the fun.</p>
+        <a href="inventory.html?category=inflatables-rentals" class="slide-btn">View Inflatables</a>
       </div>
     </div>
-  </section>
-
-  <!-- ══ MARQUEE ══ -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span>Inflatables</span><span class="dot">·</span>
-      <span>Carnival Games</span><span class="dot">·</span>
-      <span>Tents & Canopies</span><span class="dot">·</span>
-      <span>Décor & Backdrops</span><span class="dot">·</span>
-      <span>Photo Booths</span><span class="dot">·</span>
-      <span>Casino Nights</span><span class="dot">·</span>
-      <span>Pro Audio & Lighting</span><span class="dot">·</span>
-      <span>Food & Beverage</span><span class="dot">·</span>
-      <span>Entertainment Services</span><span class="dot">·</span>
-      <span>Visual Effects</span><span class="dot">·</span>
-      <span>Furniture & Lounge</span><span class="dot">·</span>
-      <span>Mechanical Rides</span><span class="dot">·</span>
-      <!-- duplicate for seamless loop -->
-      <span>Inflatables</span><span class="dot">·</span>
-      <span>Carnival Games</span><span class="dot">·</span>
-      <span>Tents & Canopies</span><span class="dot">·</span>
-      <span>Décor & Backdrops</span><span class="dot">·</span>
-      <span>Photo Booths</span><span class="dot">·</span>
-      <span>Casino Nights</span><span class="dot">·</span>
-      <span>Pro Audio & Lighting</span><span class="dot">·</span>
-      <span>Food & Beverage</span><span class="dot">·</span>
-    </div>
-  </div>
-
-  <!-- ══ WHAT WE OFFER ══ -->
-  <section class="offer-section">
-    <div class="container">
-      <div class="offer-header">
-        <div>
-          <p class="section-label">What We Offer</p>
-          <h2 class="section-title fade-up">
-            Everything your event<br />needs, in one place.
-          </h2>
-        </div>
-        <a href="inventory.html" class="btn btn-outline fade-up delay-2">View All 670+ Items</a>
-      </div>
-
-      <div class="offer-asym-grid">
-        <!-- Masonry Block 1 (Large Image, Overlay Text) -->
-        <a href="inventory.html?category=inflatables-rentals" class="offer-asym-card offer-asym-card--hero fade-up">
-          <div class="offer-img-layer">
-            <img src="https://images.unsplash.com/photo-1566738780863-f9608f88f3a9?w=1200&q=80&auto=format&fit=crop" alt="Inflatables" />
-            <div class="offer-img-scrim"></div>
-          </div>
-          <div class="offer-content-layer">
-            <span class="offer-num">01</span>
-            <h3>Signature Inflatables</h3>
-            <p>Architecturally stunning bounce structures, competitive units, and massive inflatables.</p>
-            <span class="offer-link">View 206 items</span>
-          </div>
-        </a>
-
-        <!-- Masonry Block 2 (Text Heavy, Minimal Image) -->
-        <a href="inventory.html?category=decor-rentals" class="offer-asym-card offer-asym-card--side fade-up delay-1">
-          <div class="offer-img-layer">
-            <img src="https://images.unsplash.com/photo-1561912774-79769a0a0a7a?w=800&q=75&auto=format&fit=crop" alt="Decor" />
-          </div>
-          <div class="offer-content-layer">
-            <span class="offer-num">02</span>
-            <h3>Décor & Atmospherics</h3>
-            <p>From elegant balloon arches to grand backdrops and air dancers.</p>
-          </div>
-        </a>
-
-        <!-- Masonry Block 3 (Landscape) -->
-        <a href="inventory.html?category=tent-canopy-rentals" class="offer-asym-card offer-asym-card--wide fade-up delay-2">
-          <div class="offer-img-layer">
-             <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1000&q=80&auto=format&fit=crop" alt="Tents" />
-             <div class="offer-img-scrim"></div>
-          </div>
-          <div class="offer-content-layer">
-            <span class="offer-num">03</span>
-            <h3>Tents & Structures</h3>
-            <p>Premium 40×20 frame tents with full-service white-glove installation.</p>
-            <span class="offer-link">View 51 items</span>
-          </div>
-        </a>
-
-        <!-- Masonry Block 4 -->
-        <a href="inventory.html?category=entertainment-services" class="offer-asym-card offer-asym-card--tall fade-up">
-          <div class="offer-img-layer">
-            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80&auto=format&fit=crop" alt="Entertainment Services" />
-          </div>
-          <div class="offer-content-layer">
-            <span class="offer-num">04</span>
-            <h3>Entertainment</h3>
-            <p>MCs, casino dealers, and live talent to anchor the energy of the room.</p>
-          </div>
-        </a>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="images/services/casino.png" alt="Casino Games" class="slide-bg" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h1>Interactive Games & Casino</h1>
+        <p>Keep your guests entertained all night with our premium gaming rentals.</p>
+        <a href="inventory.html?category=entertainment-games-rentals" class="slide-btn">View Games</a>
       </div>
     </div>
-  </section>
-
-  <!-- ══ PHILOSOPHY ══ -->
-  <section class="phil-section">
-    <div class="container">
-      <div class="phil-inner">
-        <div class="phil-left">
-          <p class="section-label fade-up">Our Approach</p>
-          <h2 class="phil-quote section-title">
-            "We don't just<br />rent equipment.<br />
-            <em>We build experiences.</em>"
-          </h2>
-        </div>
-        <div class="phil-right fade-up delay-2">
-          <p>From the first call to the last takedown, Vertex Events is your partner in creating moments people talk about long after the night ends. Our team handles logistics, setup, and support so you can focus on what matters — your guests.</p>
-          <div class="phil-points">
-            <div class="phil-point">
-              <div class="phil-dot"></div>
-              <span>Delivery & Professional Setup</span>
-            </div>
-            <div class="phil-point">
-              <div class="phil-dot"></div>
-              <span>One-stop rental catalog with 670+ items</span>
-            </div>
-            <div class="phil-point">
-              <div class="phil-dot"></div>
-              <span>Live inventory wishlist powered by Goodshuffle</span>
-            </div>
-            <div class="phil-point">
-              <div class="phil-dot"></div>
-              <span>Serving Halifax, NS and surrounding areas</span>
-            </div>
-          </div>
-          <a href="services.html" class="btn btn-outline">Our Services</a>
-        </div>
-      </div>
+    
+    <!-- Slider Controls -->
+    <button class="slider-prev" id="slider-prev">&#10094;</button>
+    <button class="slider-next" id="slider-next">&#10095;</button>
+    <div class="slider-dots" id="slider-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
     </div>
-  </section>
+  </header>
 
-  <!-- ══ MORE CATEGORIES ══ -->
-  <section class="more-section" style="padding: 120px 0; background: var(--bg-1);">
-    <div class="container">
-      <div class="more-header fade-up" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px;">
-        <div>
-          <p class="section-label">Also Available</p>
-          <h2 class="section-title" style="margin-bottom: 0;">More to explore.</h2>
-        </div>
-        <a href="inventory.html" class="btn btn-outline" style="margin-bottom: 8px;">View All Categories</a>
-      </div>
+  <main style="padding: 80px 0; background: #f8f9fa;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
       
-      <div class="more-premium-grid">
-        <a href="inventory.html?category=photo-booth-rentals" class="more-premium-card fade-up">
-          <div class="mp-icon">📸</div>
-          <h3>Photo Booths</h3>
-          <span class="mp-count">7 items</span>
-        </a>
-        <a href="inventory.html?category=lighting-decor-rentals" class="more-premium-card fade-up delay-1">
-          <div class="mp-icon">✨</div>
-          <h3>Lighting & Marquee</h3>
-          <span class="mp-count">23 items</span>
-        </a>
-        <a href="inventory.html?category=pro-audio-rentals" class="more-premium-card fade-up delay-2">
-          <div class="mp-icon">🔊</div>
-          <h3>Pro Audio</h3>
-          <span class="mp-count">9 items</span>
-        </a>
-        <a href="inventory.html?category=furniture-rentals" class="more-premium-card fade-up delay-3">
-          <div class="mp-icon">🪑</div>
-          <h3>Furniture & Lounge</h3>
-          <span class="mp-count">31 items</span>
-        </a>
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2 style="font-size: 2.5rem; color: #111; margin-bottom: 16px;">Shop By Category</h2>
+        <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">Browse our extensive inventory of premium rentals and equipment to make your next event unforgettable.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- ══ MIDNIGHT NAVY CTA ══ -->
-  <section class="premium-cta">
-    <div class="container">
-      <div class="premium-cta-inner fade-up">
-        <p class="section-label" style="color: var(--accent);">Ready When You Are</p>
-        <h2 class="display-lg">
-          Let's make your next<br />event unforgettable.
-        </h2>
-        <div class="cta-actions" style="margin-top: 48px;">
-          <a href="inventory.html?tags=Basic%20Bouncer" class="btn btn-primary">Browse Full Catalog</a>
-          <a href="contact.html" class="btn" style="background:#ffffff; color:#111a22; border-color:#ffffff;">Request a Quote</a>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- Categories Grid -->
+      <div class="categories-grid">
+        <a href="inventory.html?category=inflatables-rentals" class="category-card">
+          <div class="cat-img-wrapper">
+            <img src="images/services/inflatables.png" alt="Inflatables" />
+          </div>
+          <div class="cat-label">Inflatables & Combos</div>
+        </a>
+        
+        <a href="inventory.html?category=tent-canopy-rentals" class="category-card">
+          <div class="cat-img-wrapper">
+            <img src="images/services/tents.png" alt="Tents" />
+          </div>
+          <div class="cat-label">Tents & Canopies</div>
+        </a>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-wordmark">Vertex <span>Events</span></a>
-          <p>Halifax's premier event rental company. From inflatables to full event production — we've got you covered.</p>
+        <a href="inventory.html?category=entertainment-games-rentals" class="category-card">
+          <div class="cat-img-wrapper">
+            <img src="images/services/casino.png" alt="Games" />
+          </div>
+          <div class="cat-label">Games & Entertainment</div>
+        </a>
+
+        <a href="inventory.html?category=decor-rentals" class="category-card">
+          <div class="cat-img-wrapper">
+            <img src="images/services/decor.png" alt="Decor" />
+          </div>
+          <div class="cat-label">Décor & Props</div>
+        </a>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="inventory.html" class="btn btn-outline" style="border: 2px solid #0b318f; color: #0b318f; padding: 12px 32px; text-decoration: none; font-weight: 600; border-radius: 4px; display: inline-block;">View Full Catalog</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer style="background: #111; color: #fff; padding: 60px 0 20px;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+        <div>
+          <a href="index.html" class="nav-wordmark" style="color: #fff; font-size: 1.5rem; text-decoration: none; font-weight: bold;">Vertex <span style="color: #0b318f;">Events</span></a>
+          <p style="color: #aaa; margin-top: 16px;">Halifax's premier event rental company. From inflatables to full event production.</p>
         </div>
-        <div class="footer-col">
-          <h5>Navigate</h5>
-          <a href="index.html">Home</a>
-          <a href="inventory.html?tags=Basic%20Bouncer">Browse Rentals</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="contact.html">Contact</a>
+        <div>
+          <h5 style="font-size: 1.1rem; margin-bottom: 16px;">Navigate</h5>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="index.html" style="color: #aaa; text-decoration: none;">Home</a>
+            <a href="inventory.html?tags=Basic%20Bouncer" style="color: #aaa; text-decoration: none;">Browse Rentals</a>
+            <a href="gallery.html" style="color: #aaa; text-decoration: none;">Gallery</a>
+            <a href="contact.html" style="color: #aaa; text-decoration: none;">Contact</a>
+          </div>
         </div>
-        <div class="footer-col">
-          <h5>Top Categories</h5>
-          <a href="inventory.html?category=inflatables-rentals">Inflatables</a>
-          <a href="inventory.html?category=entertainment-games-rentals">Games</a>
-          <a href="inventory.html?category=decor-rentals">Décor</a>
-          <a href="inventory.html?category=tent-canopy-rentals">Tents</a>
-          <a href="inventory.html?category=food-service-rentals">Food & Beverage</a>
-        </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <a href="tel:+19025551234">(902) 555-1234</a>
-          <a href="mailto:info@vertexevents.ca">info@vertexevents.ca</a>
-          <a href="#">Halifax, Nova Scotia</a>
+        <div>
+          <h5 style="font-size: 1.1rem; margin-bottom: 16px;">Contact</h5>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="tel:+19025551234" style="color: #aaa; text-decoration: none;">(902) 555-1234</a>
+            <a href="mailto:info@vertexevents.ca" style="color: #aaa; text-decoration: none;">info@vertexevents.ca</a>
+            <span style="color: #aaa;">Halifax, Nova Scotia</span>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div style="border-top: 1px solid #333; padding-top: 20px; display: flex; justify-content: space-between; color: #777; font-size: 0.9rem;">
         <span>© 2026 Vertex Events. All rights reserved.</span>
-        <span>Inventory powered by <a href="https://pro.goodshuffle.com">Goodshuffle Pro</a></span>
+        <span>Inventory powered by <a href="https://pro.goodshuffle.com" style="color: #aaa; text-decoration: none;">Goodshuffle Pro</a></span>
       </div>
     </div>
   </footer>

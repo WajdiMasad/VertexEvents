@@ -1,21 +1,66 @@
 /* ============================================================
-   Vertex Events — home.js  (homepage particle effect)
+   Vertex Events — home.js (Generic Slider Logic)
    ============================================================ */
 
-(function () {
-  const container = document.getElementById('particles');
-  if (!container) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.getElementById('slider-prev');
+  const nextBtn = document.getElementById('slider-next');
+  
+  if (!slides.length) return;
 
-  const COUNT = 28;
-  for (let i = 0; i < COUNT; i++) {
-    const p = document.createElement('div');
-    p.classList.add('particle');
-    p.style.left    = Math.random() * 100 + '%';
-    p.style.top     = (40 + Math.random() * 55) + '%';
-    p.style.setProperty('--dur',   (6 + Math.random() * 7) + 's');
-    p.style.setProperty('--delay', (Math.random() * 6) + 's');
-    p.style.width   = p.style.height = (2 + Math.random() * 3) + 'px';
-    p.style.opacity = 0;
-    container.appendChild(p);
+  let currentSlide = 0;
+  let slideInterval;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    if (index >= slides.length) currentSlide = 0;
+    else if (index < 0) currentSlide = slides.length - 1;
+    else currentSlide = index;
+
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
   }
-})();
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  function startSlider() {
+    slideInterval = setInterval(nextSlide, 5000); // 5 seconds per slide
+  }
+
+  function resetSlider() {
+    clearInterval(slideInterval);
+    startSlider();
+  }
+
+  // Event Listeners
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetSlider();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetSlider();
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      const index = parseInt(e.target.getAttribute('data-index'));
+      showSlide(index);
+      resetSlider();
+    });
+  });
+
+  // Init
+  startSlider();
+});
